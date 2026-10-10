@@ -18,52 +18,41 @@
 <link rel="manifest" href='data:application/manifest+json,{"name":"حسابداری تیل‌فروشی","short_name":"تیل‌فروشی","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"%230d7377","theme_color":"%230d7377","lang":"fa","dir":"rtl","icons":[{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]}'>
 
 <style>
-:root{
-  --primary:#0d7377;--primary-dark:#095456;--primary-light:#14b8a6;
-  --bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;
-  --border:#e2e8f0;--danger:#dc2626;--success:#16a34a;
-  --warning:#ea580c;--info:#0284c7;--radius:12px;
-  --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
-}
+:root{--primary:#0d7377;--primary-dark:#095456;--primary-light:#14b8a6;
+--bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;--border:#e2e8f0;
+--danger:#dc2626;--success:#16a34a;--warning:#ea580c;--info:#0284c7;
+--radius:12px;--shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:Tahoma,'Segoe UI',system-ui,sans-serif;background:var(--bg);
-  color:var(--text);direction:rtl;line-height:1.6;min-height:100vh;
-  padding-bottom:80px;overflow-x:hidden}
+color:var(--text);direction:rtl;line-height:1.6;min-height:100vh;padding-bottom:80px;overflow-x:hidden}
 button{font-family:inherit;cursor:pointer;border:none}
 input,select,textarea{font-family:inherit;font-size:16px}
 .unit{font-size:.8em;color:var(--muted);font-weight:normal}
 .app{max-width:1300px;margin:0 auto;padding:12px}
 .header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  color:#fff;padding:14px 18px;border-radius:var(--radius);display:flex;
-  justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-  box-shadow:var(--shadow)}
+color:#fff;padding:14px 18px;border-radius:var(--radius);display:flex;
+justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;box-shadow:var(--shadow)}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{font-size:32px;background:rgba(255,255,255,.15);width:50px;height:50px;
-  border-radius:12px;display:flex;align-items:center;justify-content:center}
+border-radius:12px;display:flex;align-items:center;justify-content:center}
 .brand h1{font-size:17px;font-weight:700}
 .subtitle{font-size:12px;opacity:.85;margin-top:2px}
-.cash-badge{background:rgba(255,255,255,.2);padding:8px 14px;border-radius:10px;
-  text-align:center;font-size:11px}
-.cash-badge .cash-val{font-size:16px;font-weight:800;display:block;
-  font-variant-numeric:tabular-nums}
+.cash-badge{background:rgba(255,255,255,.2);padding:8px 14px;border-radius:10px;text-align:center;font-size:11px}
+.cash-badge .cash-val{font-size:16px;font-weight:800;display:block;font-variant-numeric:tabular-nums}
 .cash-badge .cash-lbl{opacity:.9}
 .nav{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0;background:var(--card);
-  padding:6px;border-radius:var(--radius);box-shadow:var(--shadow)}
-.nav button{background:transparent;color:var(--text);padding:9px 12px;
-  border-radius:8px;font-size:13px;font-weight:600;transition:.15s;
-  display:flex;align-items:center;gap:5px;white-space:nowrap}
+padding:6px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.nav button{background:transparent;color:var(--text);padding:9px 12px;border-radius:8px;
+font-size:13px;font-weight:600;transition:.15s;display:flex;align-items:center;gap:5px;white-space:nowrap}
 .nav button:hover{background:#f1f5f9}
 .nav button.active{background:var(--primary);color:#fff}
 .content{display:flex;flex-direction:column;gap:12px}
-.card{background:var(--card);border-radius:var(--radius);padding:16px;
-  box-shadow:var(--shadow)}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
 .card h2{font-size:16px;margin-bottom:12px;color:var(--primary-dark);
-  display:flex;align-items:center;gap:8px;padding-bottom:8px;
-  border-bottom:1px solid var(--border)}
+display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 .card h3{font-size:14px;margin:10px 0 8px;color:var(--primary-dark)}
 .btn{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;
-  transition:.15s;display:inline-flex;align-items:center;gap:6px;
-  justify-content:center;min-height:42px}
+transition:.15s;display:inline-flex;align-items:center;gap:6px;justify-content:center;min-height:42px}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:var(--primary);color:#fff}
 .btn-primary:hover{background:var(--primary-dark)}
@@ -76,39 +65,35 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .btn-lg{padding:16px 20px;font-size:16px;width:100%}
 .btn-sm{padding:6px 10px;font-size:12px;min-height:32px}
 .btn:disabled{opacity:.5;cursor:not-allowed}
-.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:12px}
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .field{display:flex;flex-direction:column;gap:5px}
 .field label{font-size:12px;font-weight:600;color:var(--muted)}
 .field input,.field select,.field textarea{padding:10px 12px;border:1px solid var(--border);
-  border-radius:8px;background:#fff;transition:.15s;width:100%}
+border-radius:8px;background:#fff;transition:.15s;width:100%}
 .field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,115,119,.1)}
+outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,115,119,.1)}
 .field input[readonly]{background:#f8fafc;color:var(--muted)}
 .field-full{grid-column:1/-1}
 .total-display{font-size:20px;font-weight:800;color:var(--primary-dark);
-  background:#f0fdfa;padding:10px 14px;border-radius:8px;
-  border:2px dashed var(--primary-light);text-align:center;
-  font-variant-numeric:tabular-nums}
-.radio-group{display:flex;gap:8px}
-.radio-group label{flex:1;padding:10px;border:2px solid var(--border);
-  border-radius:8px;cursor:pointer;text-align:center;font-weight:600;
-  font-size:13px;transition:.15s;background:#fff}
-.radio-group label.checked{border-color:var(--primary);background:#f0fdfa;
-  color:var(--primary-dark)}
+background:#f0fdfa;padding:10px 14px;border-radius:8px;border:2px dashed var(--primary-light);
+text-align:center;font-variant-numeric:tabular-nums}
+.radio-group{display:flex;gap:6px;flex-wrap:wrap}
+.radio-group label{flex:1;min-width:100px;padding:10px;border:2px solid var(--border);
+border-radius:8px;cursor:pointer;text-align:center;font-weight:600;
+font-size:12px;transition:.15s;background:#fff}
+.radio-group label.checked{border-color:var(--primary);background:#f0fdfa;color:var(--primary-dark)}
+.radio-group label.mixed.checked{border-color:var(--warning);background:#fff7ed;color:#9a3412}
 .radio-group input{display:none}
-.summary-box{background:#f8fafc;border:1px solid var(--border);
-  border-radius:8px;padding:12px;margin:12px 0;font-size:13px}
+.summary-box{background:#f8fafc;border:1px solid var(--border);border-radius:8px;
+padding:12px;margin:12px 0;font-size:13px}
 .summary-box .row{display:flex;justify-content:space-between;padding:3px 0}
 .summary-box .row.total{border-top:1px solid var(--border);margin-top:5px;
-  padding-top:7px;font-size:15px;font-weight:800;color:var(--primary-dark)}
-.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);
-  -webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;
-  min-width:560px}
+padding-top:7px;font-size:15px;font-weight:800;color:var(--primary-dark)}
+.summary-box .row.split{border-top:1px dashed var(--border);margin-top:6px;padding-top:6px}
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;min-width:560px}
 th{background:#f8fafc;padding:9px 10px;text-align:right;font-weight:700;
-  color:var(--muted);font-size:11px;border-bottom:1px solid var(--border);
-  white-space:nowrap}
+color:var(--muted);font-size:11px;border-bottom:1px solid var(--border);white-space:nowrap}
 td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
 tr:last-child td{border-bottom:none}
 tr:hover td{background:#f8fafc}
@@ -117,12 +102,11 @@ tr:hover td{background:#f8fafc}
 .num{font-variant-numeric:tabular-nums;font-weight:600}
 .pos{color:var(--success)}
 .neg{color:var(--danger)}
-.empty-state{padding:30px 20px;text-align:center;color:var(--muted);
-  font-size:13px}
-.badge{display:inline-block;padding:3px 9px;border-radius:20px;
-  font-size:10px;font-weight:700}
+.empty-state{padding:30px 20px;text-align:center;color:var(--muted);font-size:13px}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700}
 .badge-cash{background:#dcfce7;color:#166534}
 .badge-credit{background:#fee2e2;color:#991b1b}
+.badge-mixed{background:#ffedd5;color:#9a3412}
 .badge-active{background:#dcfce7;color:#166534}
 .badge-inactive{background:#f1f5f9;color:#64748b}
 .badge-closed{background:#fef3c7;color:#92400e}
@@ -131,91 +115,77 @@ tr:hover td{background:#f8fafc}
 .badge-warning{background:#ffedd5;color:#9a3412}
 .badge-success{background:#dcfce7;color:#166534}
 .badge-danger{background:#fee2e2;color:#991b1b}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:10px}
-.stat{background:var(--card);border-radius:var(--radius);padding:14px;
-  box-shadow:var(--shadow);border-right:4px solid var(--primary);
-  display:flex;flex-direction:column;gap:4px}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.stat{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);
+border-right:4px solid var(--primary);display:flex;flex-direction:column;gap:4px}
 .stat.blue{border-color:var(--info)}
 .stat.green{border-color:var(--success)}
 .stat.red{border-color:var(--danger)}
 .stat.orange{border-color:var(--warning)}
 .stat.cash{border-color:#059669;background:linear-gradient(135deg,#fff,#f0fdf4)}
 .stat .label{font-size:11px;color:var(--muted);font-weight:600}
-.stat .value{font-size:20px;font-weight:800;color:var(--text);
-  font-variant-numeric:tabular-nums}
+.stat .value{font-size:20px;font-weight:800;color:var(--text);font-variant-numeric:tabular-nums}
 .stat .sub{font-size:10px;color:var(--muted)}
-.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:10px}
-.quick-btn{padding:16px 10px;border-radius:12px;background:#fff;
-  box-shadow:var(--shadow);border:1px solid var(--border);
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  font-weight:700;color:var(--text);transition:.15s;font-size:12px}
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.quick-btn{padding:16px 10px;border-radius:12px;background:#fff;box-shadow:var(--shadow);
+border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:6px;
+font-weight:700;color:var(--text);transition:.15s;font-size:12px}
 .quick-btn:hover{border-color:var(--primary);transform:translateY(-2px)}
 .quick-btn .ico{font-size:24px}
 .quick-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);
-  display:flex;align-items:center;justify-content:center;padding:12px;
-  z-index:1000;animation:fadeIn .15s}
+display:flex;align-items:center;justify-content:center;padding:12px;z-index:1000;animation:fadeIn .15s}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal{background:#fff;border-radius:var(--radius);width:100%;max-width:620px;
-  max-height:92vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,.3);
-  animation:slideUp .2s}
-@keyframes slideUp{from{transform:translateY(20px);opacity:0}
-  to{transform:translateY(0);opacity:1}}
+max-height:92vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,.3);animation:slideUp .2s}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-header{padding:14px 16px;border-bottom:1px solid var(--border);
-  display:flex;justify-content:space-between;align-items:center;
-  position:sticky;top:0;background:#fff;z-index:1}
+display:flex;justify-content:space-between;align-items:center;
+position:sticky;top:0;background:#fff;z-index:1}
 .modal-header h3{font-size:15px;color:var(--primary-dark)}
-.close-btn{background:transparent;font-size:24px;color:var(--muted);
-  width:30px;height:30px;border-radius:8px;display:flex;align-items:center;
-  justify-content:center;line-height:1}
+.close-btn{background:transparent;font-size:24px;color:var(--muted);width:30px;height:30px;
+border-radius:8px;display:flex;align-items:center;justify-content:center;line-height:1}
 .close-btn:hover{background:#f1f5f9}
 .modal-body{padding:16px}
-.modal-footer{padding:12px 16px;border-top:1px solid var(--border);
-  display:flex;gap:8px;justify-content:flex-end;position:sticky;bottom:0;
-  background:#fff}
-.row-between{display:flex;justify-content:space-between;align-items:center;
-  gap:10px;flex-wrap:wrap}
+.modal-footer{padding:12px 16px;border-top:1px solid var(--border);display:flex;
+gap:8px;justify-content:flex-end;position:sticky;bottom:0;background:#fff}
+.row-between{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
 .flex{display:flex;gap:8px;flex-wrap:wrap}
 .mt{margin-top:12px}
 .mb{margin-bottom:12px}
 .muted{color:var(--muted);font-size:12px}
 .divider{height:1px;background:var(--border);margin:12px 0}
-.warning-banner{background:#fef3c7;color:#92400e;padding:12px 16px;
-  border-radius:8px;border-right:4px solid var(--warning);font-size:13px;
-  font-weight:600}
-.info-banner{background:#dbeafe;color:#1e40af;padding:12px 16px;
-  border-radius:8px;border-right:4px solid var(--info);font-size:13px}
-.success-banner{background:#dcfce7;color:#166534;padding:12px 16px;
-  border-radius:8px;border-right:4px solid var(--success);font-size:13px}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
-  background:#0f172a;color:#fff;padding:12px 22px;border-radius:10px;
-  font-size:13px;font-weight:600;z-index:2000;
-  box-shadow:0 10px 30px rgba(0,0,0,.3);animation:slideUp .2s;
-  max-width:90vw;text-align:center}
+.warning-banner{background:#fef3c7;color:#92400e;padding:12px 16px;border-radius:8px;
+border-right:4px solid var(--warning);font-size:13px;font-weight:600}
+.info-banner{background:#dbeafe;color:#1e40af;padding:12px 16px;border-radius:8px;
+border-right:4px solid var(--info);font-size:13px}
+.success-banner{background:#dcfce7;color:#166534;padding:12px 16px;border-radius:8px;
+border-right:4px solid var(--success);font-size:13px}
+.mixed-banner{background:#ffedd5;color:#9a3412;padding:12px 16px;border-radius:8px;
+border-right:4px solid var(--warning);font-size:13px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0f172a;
+color:#fff;padding:12px 22px;border-radius:10px;font-size:13px;font-weight:600;
+z-index:2000;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:slideUp .2s;max-width:90vw;text-align:center}
 .toast.success{background:var(--success)}
 .toast.error{background:var(--danger)}
 .search-box{position:relative}
 .search-box input{padding-right:34px}
-.search-box::before{content:"🔍";position:absolute;right:10px;top:50%;
-  transform:translateY(-50%);font-size:13px;opacity:.6}
-#pwaInstallBtn{position:fixed;bottom:16px;left:16px;z-index:999;
-  background:var(--primary);color:#fff;padding:11px 18px;
-  border-radius:50px;font-size:13px;font-weight:700;display:none;
-  align-items:center;gap:6px;box-shadow:0 6px 20px rgba(13,115,119,.4)}
+.search-box::before{content:"🔍";position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:13px;opacity:.6}
+#pwaInstallBtn{position:fixed;bottom:16px;left:16px;z-index:999;background:var(--primary);
+color:#fff;padding:11px 18px;border-radius:50px;font-size:13px;font-weight:700;display:none;
+align-items:center;gap:6px;box-shadow:0 6px 20px rgba(13,115,119,.4)}
 @media (max-width:640px){
-  .app{padding:8px}
-  .header{padding:12px}
-  .brand h1{font-size:15px}
-  .logo{width:42px;height:42px;font-size:26px}
-  .nav{padding:5px;overflow-x:auto;flex-wrap:nowrap}
-  .nav button{padding:8px 10px;font-size:12px}
-  .card{padding:12px}
-  .stat .value{font-size:17px}
-  .cash-badge .cash-val{font-size:14px}
-  table{font-size:11px;min-width:520px}
-  th,td{padding:7px 8px}
+.app{padding:8px}
+.header{padding:12px}
+.brand h1{font-size:15px}
+.logo{width:42px;height:42px;font-size:26px}
+.nav{padding:5px;overflow-x:auto;flex-wrap:nowrap}
+.nav button{padding:8px 10px;font-size:12px}
+.card{padding:12px}
+.stat .value{font-size:17px}
+.cash-badge .cash-val{font-size:14px}
+table{font-size:11px;min-width:520px}
+th,td{padding:7px 8px}
 }
 </style>
 </head>
@@ -241,21 +211,21 @@ tr:hover td{background:#f8fafc}
 <button id="pwaInstallBtn" onclick="installPWA()">📲 نصب برنامه</button>
 
 <script>
-/* ==================================================================
-   REGISTER SERVICE WORKER — for offline mode
-================================================================== */
+/* ==========================================================
+   SERVICE WORKER — OFFLINE
+========================================================== */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js', { scope: './' })
-      .then(reg => console.log('✅ Service Worker registered:', reg.scope))
-      .catch(err => console.warn('⚠️ SW error:', err));
+      .then(reg => console.log('✅ SW:', reg.scope))
+      .catch(err => console.warn('⚠️ SW:', err));
   });
 }
 
-/* ==================================================================
-   STATE / STORAGE
-================================================================== */
-const STORAGE_KEY = 'till_accounting_v2';
+/* ==========================================================
+   STATE
+========================================================== */
+const STORAGE_KEY = 'till_accounting_v3';
 
 function defaultState() {
   return {
@@ -282,7 +252,7 @@ function defaultState() {
 
 let state;
 try {
-  const raw = localStorage.getItem(STORAGE_KEY);
+  const raw = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('till_accounting_v2');
   state = raw ? JSON.parse(raw) : defaultState();
   if (!state.customers.some(c => c.isWalkIn))
     state.customers.unshift(defaultState().customers[0]);
@@ -353,33 +323,49 @@ function log(action, details) {
 }
 function isDayClosed(date) { return !!state.closedDays[date]; }
 
+/* ==========================================================
+   ★★★ SALE HELPERS (with mixed payment support) ★★★
+========================================================== */
+
+// Cash portion of a sale
+function saleCashPortion(s) {
+  if (s.paymentType === 'cash') return s.total;
+  if (s.paymentType === 'mixed') return Number(s.cashPaid) || 0;
+  return 0; // credit
+}
+// Credit portion of a sale
+function saleCreditPortion(s) {
+  if (s.paymentType === 'credit') return s.total;
+  if (s.paymentType === 'mixed') return Number(s.creditAmount) || 0;
+  return 0; // cash
+}
+
+/* ==========================================================
+   CASH FLOW
+========================================================== */
 function cashFromSales(from, to) {
   return state.sales
-    .filter(s => s.status !== 'voided' && s.paymentType === 'cash')
+    .filter(s => s.status !== 'voided')
     .filter(s => (!from || s.date >= from) && (!to || s.date <= to))
-    .reduce((a,s) => a + s.total, 0);
+    .reduce((a,s) => a + saleCashPortion(s), 0);
 }
 function cashFromDebtPayments(from, to) {
-  return state.debtPayments
-    .filter(p => p.status !== 'voided')
+  return state.debtPayments.filter(p => p.status !== 'voided')
     .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
     .reduce((a,p) => a + p.amount, 0);
 }
 function cashFromLoanReturns(from, to) {
-  return state.loanPayments
-    .filter(p => p.status !== 'voided')
+  return state.loanPayments.filter(p => p.status !== 'voided')
     .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
     .reduce((a,p) => a + p.amount, 0);
 }
 function cashOutLoans(from, to) {
-  return state.loans
-    .filter(l => l.status !== 'voided')
+  return state.loans.filter(l => l.status !== 'voided')
     .filter(l => (!from || l.date >= from) && (!to || l.date <= to))
     .reduce((a,l) => a + l.amount, 0);
 }
 function cashFromAdjustments(from, to) {
-  return state.cashAdjustments
-    .filter(a => a.status !== 'voided')
+  return state.cashAdjustments.filter(a => a.status !== 'voided')
     .filter(a => (!from || a.date >= from) && (!to || a.date <= to))
     .reduce((a,x) => a + (x.type === 'in' ? x.amount : -x.amount), 0);
 }
@@ -391,18 +377,18 @@ function cashSummary(from, to) {
   const adjustments = cashFromAdjustments(from, to);
   const totalIn  = cashSales + debtPaid + loanReturn + Math.max(adjustments, 0);
   const totalOut = loansOut + Math.max(-adjustments, 0);
-  return {
-    cashSales, debtPaid, loanReturn, loansOut, adjustments,
-    totalIn, totalOut, net: totalIn - totalOut
-  };
+  return { cashSales, debtPaid, loanReturn, loansOut, adjustments,
+    totalIn, totalOut, net: totalIn - totalOut };
 }
 function totalCashOnHand() { return cashSummary(null, null).net; }
 
+/* ==========================================================
+   CUSTOMER / LOAN
+========================================================== */
 function customerBalance(cid) {
   const credit = state.sales
-    .filter(s => s.customerId === cid && s.paymentType === 'credit'
-              && s.status !== 'voided')
-    .reduce((a,s) => a + s.total, 0);
+    .filter(s => s.customerId === cid && s.status !== 'voided')
+    .reduce((a,s) => a + saleCreditPortion(s), 0);
   const paid = state.debtPayments
     .filter(p => p.customerId === cid && p.status !== 'voided')
     .reduce((a,p) => a + p.amount, 0);
@@ -410,13 +396,11 @@ function customerBalance(cid) {
   return credit + init - paid;
 }
 function customerTotalPurchases(cid) {
-  return state.sales
-    .filter(s => s.customerId === cid && s.status !== 'voided')
+  return state.sales.filter(s => s.customerId === cid && s.status !== 'voided')
     .reduce((a,s) => a + s.total, 0);
 }
 function loanPaid(lid) {
-  return state.loanPayments
-    .filter(p => p.loanId === lid && p.status !== 'voided')
+  return state.loanPayments.filter(p => p.loanId === lid && p.status !== 'voided')
     .reduce((a,p) => a + p.amount, 0);
 }
 function loanRemaining(lid) {
@@ -433,23 +417,28 @@ function loanStatus(lid) {
   if (paid >= l.amount) return 'paid';
   return 'partial';
 }
+
+/* ==========================================================
+   DAY SUMMARY
+========================================================== */
 function daySummary(date) {
   const sales = state.sales.filter(s => s.date === date && s.status !== 'voided');
   const debtPayments = state.debtPayments.filter(p => p.date === date && p.status !== 'voided');
   const loansGiven = state.loans.filter(l => l.date === date && l.status !== 'voided');
   const loanPaymentsList = state.loanPayments.filter(p => p.date === date && p.status !== 'voided');
+
   const totalLiters = sales.reduce((a,s) => a + s.liters, 0);
   const totalSales = sales.reduce((a,s) => a + s.total, 0);
-  const cashSales = sales.filter(s => s.paymentType === 'cash')
-                         .reduce((a,s) => a + s.total, 0);
-  const creditSales = sales.filter(s => s.paymentType === 'credit')
-                           .reduce((a,s) => a + s.total, 0);
+  const cashSales = sales.reduce((a,s) => a + saleCashPortion(s), 0);
+  const creditSales = sales.reduce((a,s) => a + saleCreditPortion(s), 0);
   const debtCollected = debtPayments.reduce((a,p) => a + p.amount, 0);
   const loansGivenTotal = loansGiven.reduce((a,l) => a + l.amount, 0);
   const loansReturnedTotal = loanPaymentsList.reduce((a,p) => a + p.amount, 0);
+
   const cashIn = cashSales + debtCollected + loansReturnedTotal;
   const cashOut = loansGivenTotal;
   const netCash = cashIn - cashOut;
+
   const byProduct = {};
   for (const s of sales) {
     if (!byProduct[s.productId]) byProduct[s.productId] = { liters:0, total:0 };
@@ -459,12 +448,15 @@ function daySummary(date) {
   return {
     date, count: sales.length, totalLiters, totalSales, cashSales, creditSales,
     debtCollected, loansGivenTotal, loansReturnedTotal,
-    cashIn, cashOut, netCash,
-    byProduct, salesList: sales, debtPaymentsList: debtPayments,
+    cashIn, cashOut, netCash, byProduct,
+    salesList: sales, debtPaymentsList: debtPayments,
     loansGivenList: loansGiven, loanPaymentsList
   };
 }
 
+/* ==========================================================
+   NAV / RENDER
+========================================================== */
 let currentPage = 'dashboard';
 const NAV_ITEMS = [
   { id:'dashboard',      icon:'🏠', label:'داشبورد' },
@@ -473,12 +465,11 @@ const NAV_ITEMS = [
   { id:'products',       icon:'📦', label:'محصولات' },
   { id:'debt-payment',   icon:'💵', label:'دریافت پول نسیه' },
   { id:'loans',          icon:'🤝', label:'قرض نقدی' },
-  { id:'cash',           icon:'💼', label:'صندوق / نقدی' },
+  { id:'cash',           icon:'💼', label:'صندوق' },
   { id:'daily-report',   icon:'📅', label:'راپور روزانه' },
   { id:'general-report', icon:'📊', label:'راپور عمومی' },
   { id:'logs',           icon:'📋', label:'لاگ' }
 ];
-
 function navigate(page) { currentPage = page; render(); window.scrollTo({top:0,behavior:'smooth'}); }
 function renderNav() {
   $('#nav').innerHTML = NAV_ITEMS.map(i =>
@@ -501,6 +492,9 @@ function render() {
   $('#content').innerHTML = (pages[currentPage] || renderDashboard)();
 }
 
+/* ==========================================================
+   DASHBOARD
+========================================================== */
 function renderDashboard() {
   const today = todayISO();
   const s = daySummary(today);
@@ -528,9 +522,9 @@ function renderDashboard() {
         <div class="stat green"><span class="label">فروش امروز</span>
           <span class="value">${fmt(s.totalSales)}</span>
           <span class="sub">AFN — ${fmt(s.totalLiters)} لیتر</span></div>
-        <div class="stat blue"><span class="label">فروش نقدی</span>
+        <div class="stat blue"><span class="label">فروش نقدی (شامل ترکیبی)</span>
           <span class="value">${fmt(s.cashSales)}</span><span class="sub">AFN</span></div>
-        <div class="stat red"><span class="label">فروش نسیه</span>
+        <div class="stat red"><span class="label">فروش نسیه (شامل ترکیبی)</span>
           <span class="value">${fmt(s.creditSales)}</span><span class="sub">AFN</span></div>
         <div class="stat orange"><span class="label">دریافت از بدهکاران</span>
           <span class="value">${fmt(s.debtCollected)}</span><span class="sub">AFN — 💰 نقد</span></div>
@@ -586,6 +580,9 @@ function renderDashboard() {
   `;
 }
 
+/* ==========================================================
+   SALE (with mixed payment) ★★★
+========================================================== */
 function renderSale() {
   const today = todayISO();
   const closed = isDayClosed(today);
@@ -627,11 +624,23 @@ function renderSale() {
           <div class="radio-group" id="payTypeGroup">
             <label class="checked" onclick="selectPayType('cash')">
               <input type="radio" name="payType" value="cash" checked>
-              <span>💵 نقد (صندوق +)</span></label>
+              <span>💵 نقد کامل</span></label>
+            <label class="mixed" id="mixedLabel" onclick="selectPayType('mixed')">
+              <input type="radio" name="payType" value="mixed">
+              <span>🔀 ترکیبی (نقد + نسیه)</span></label>
             <label id="creditLabel" onclick="selectPayType('credit')">
               <input type="radio" name="payType" value="credit">
-              <span>📝 نسیه (صندوق 0)</span></label>
+              <span>📝 نسیه کامل</span></label>
           </div></div>
+        <div class="field field-full" id="mixedInputBox" style="display:none">
+          <label>💵 مبلغ دریافتی نقد (AFN) *</label>
+          <input type="number" id="saleCashPaid" step="0.01" min="0"
+                 inputmode="decimal" placeholder="مثلاً 600"
+                 oninput="updateSaleTotal()">
+          <div class="muted" style="font-size:11px;margin-top:2px">
+            باقی‌مانده به صورت خودکار به بدهی مشتری اضافه می‌شود.
+          </div>
+        </div>
       </div>
       <div class="summary-box" id="saleSummary"></div>
       <button class="btn btn-primary btn-lg" onclick="submitSale()">✅ ثبت فروش</button>
@@ -642,6 +651,7 @@ function renderSale() {
     </div>
   `;
 }
+
 function renderSalesTable(sales, showActions) {
   if (!sales.length) return `<div class="empty-state">هیچ فروشی ثبت نشده.</div>`;
   return `
@@ -654,57 +664,75 @@ function renderSalesTable(sales, showActions) {
         const c = state.customers.find(x=>x.id===s.customerId);
         const p = state.products.find(x=>x.id===s.productId);
         const v = s.status === 'voided';
+        let payBadge = '';
+        if (v) payBadge = '<span class="badge badge-voided">باطل</span>';
+        else if (s.paymentType === 'cash')
+          payBadge = '<span class="badge badge-cash">💵 نقد</span>';
+        else if (s.paymentType === 'credit')
+          payBadge = '<span class="badge badge-credit">📝 نسیه</span>';
+        else {
+          const cashPart = Number(s.cashPaid)||0;
+          const creditPart = Number(s.creditAmount)||0;
+          payBadge = `<span class="badge badge-mixed" title="نقد: ${fmt(cashPart)} / نسیه: ${fmt(creditPart)}">🔀 ${fmt(cashPart)}+${fmt(creditPart)}</span>`;
+        }
         return `<tr style="${v?'opacity:.55':''}">
           <td class="num">${s.id}</td><td>${esc(s.time)}</td>
           <td>${esc(c?c.name:'—')}</td><td>${esc(p?p.name:'—')}</td>
           <td class="num">${fmt(s.liters)}</td>
           <td class="num">${fmt(s.pricePerLiter)}</td>
           <td class="num"><b>${fmt(s.total)}</b></td>
-          <td>${v ? '<span class="badge badge-voided">باطل</span>'
-              : s.paymentType==='cash'
-                ? '<span class="badge badge-cash">💵 نقد</span>'
-                : '<span class="badge badge-credit">📝 نسیه</span>'}</td>
+          <td>${payBadge}</td>
           ${showActions?`<td>${v?'':`<button class="btn btn-sm btn-ghost"
             onclick="voidSale(${s.id})">✖</button>`}</td>`:''}
         </tr>`;
       }).join('')}
     </tbody></table></div>`;
 }
+
 function onCustomerChange() {
   const c = state.customers.find(x => x.id === Number($('#saleCustomer').value));
-  const lbl = $('#creditLabel');
-  const r = lbl.querySelector('input');
-  if (c?.isWalkIn) {
-    r.disabled = true; lbl.style.opacity = '.45';
-    lbl.style.pointerEvents = 'none';
-    if (r.checked) selectPayType('cash');
-  } else {
-    r.disabled = false; lbl.style.opacity = '1';
-    lbl.style.pointerEvents = 'auto';
-  }
-  updateSaleSummary();
+  const walk = c?.isWalkIn;
+  ['creditLabel','mixedLabel'].forEach(id => {
+    const lbl = $('#'+id);
+    if (!lbl) return;
+    const r = lbl.querySelector('input');
+    if (walk) {
+      r.disabled = true; lbl.style.opacity = '.45'; lbl.style.pointerEvents = 'none';
+      if (r.checked) selectPayType('cash');
+    } else {
+      r.disabled = false; lbl.style.opacity = '1'; lbl.style.pointerEvents = 'auto';
+    }
+  });
+  updateSaleTotal();
 }
+
 function onProductChange() {
   const sel = $('#saleProduct');
   $('#salePrice').value = Number(sel.options[sel.selectedIndex].dataset.price) || 0;
   updateSaleTotal();
 }
+
 function selectPayType(type) {
   document.querySelectorAll('#payTypeGroup label').forEach(l => l.classList.remove('checked'));
   const r = document.querySelector(`input[name="payType"][value="${type}"]`);
-  if (r.disabled) return;
+  if (!r || r.disabled) return;
   r.checked = true; r.closest('label').classList.add('checked');
-  updateSaleSummary();
+  const mixBox = $('#mixedInputBox');
+  if (mixBox) mixBox.style.display = (type === 'mixed') ? 'flex' : 'none';
+  updateSaleTotal();
 }
+
 function getPayType() {
   return document.querySelector('input[name="payType"]:checked')?.value || 'cash';
 }
+
 function updateSaleTotal() {
   const l = parseFloat($('#saleLiters').value) || 0;
   const p = parseFloat($('#salePrice').value) || 0;
   $('#saleTotal').innerHTML = `${fmt(l*p)} <span class="unit">AFN</span>`;
   updateSaleSummary();
 }
+
 function updateSaleSummary() {
   const box = $('#saleSummary'); if (!box) return;
   const cid = Number($('#saleCustomer').value);
@@ -713,17 +741,44 @@ function updateSaleSummary() {
   const p = state.products.find(x=>x.id===pid);
   const l = parseFloat($('#saleLiters').value) || 0;
   const pr = parseFloat($('#salePrice').value) || 0;
-  const total = l*pr;
+  const total = l * pr;
   const pay = getPayType();
-  if (!l) { box.innerHTML = '<div class="muted">خلاصه پس از وارد کردن مقدار نمایش داده می‌شود…</div>'; return; }
-  box.innerHTML = `
-    <div class="row"><span>مشتری:</span><b>${esc(c?c.name:'—')}</b></div>
-    <div class="row"><span>محصول:</span><b>${esc(p?p.name:'—')}</b></div>
-    <div class="row"><span>مقدار:</span><b>${fmt(l)} لیتر</b></div>
-    <div class="row"><span>قیمت:</span><b>${fmt(pr)} AFN</b></div>
-    <div class="row"><span>پرداخت:</span><b>${pay==='cash'?'💵 نقد (صندوق +)':'📝 نسیه (صندوق بدون تغییر)'}</b></div>
-    <div class="row total"><span>مبلغ کل:</span><span>${fmt(total)} AFN</span></div>`;
+
+  if (!l) {
+    box.innerHTML = '<div class="muted">خلاصه پس از وارد کردن مقدار نمایش داده می‌شود…</div>';
+    return;
+  }
+
+  if (pay === 'mixed') {
+    const cashPaid = parseFloat($('#saleCashPaid').value) || 0;
+    const creditPart = total - cashPaid;
+    const validCash = cashPaid > 0 && cashPaid <= total;
+    const warn = cashPaid > total ? '⚠️ مبلغ نقد بیشتر از مبلغ کل است!' : '';
+    box.innerHTML = `
+      <div class="row"><span>مشتری:</span><b>${esc(c?c.name:'—')}</b></div>
+      <div class="row"><span>محصول:</span><b>${esc(p?p.name:'—')}</b></div>
+      <div class="row"><span>مقدار:</span><b>${fmt(l)} لیتر × ${fmt(pr)} = ${fmt(total)} AFN</b></div>
+      <div class="row total"><span>مبلغ کل:</span><span>${fmt(total)} AFN</span></div>
+      <div class="row split" style="color:#166534"><span>💵 نقد (به صندوق):</span>
+        <b>+${fmt(cashPaid)} AFN</b></div>
+      <div class="row" style="color:#991b1b"><span>📝 نسیه (به بدهی مشتری):</span>
+        <b>${fmt(Math.max(creditPart,0))} AFN</b></div>
+      ${creditPart < 0 ? `<div class="row" style="color:#dc2626"><b>${warn}</b></div>` : ''}
+      ${creditPart >= 0 && validCash ? `<div class="row muted" style="font-size:11px;margin-top:4px">
+        بدهی مشتری بعد: ${fmt(customerBalance(cid)+Math.max(creditPart,0))} AFN</div>` : ''}
+    `;
+  } else {
+    box.innerHTML = `
+      <div class="row"><span>مشتری:</span><b>${esc(c?c.name:'—')}</b></div>
+      <div class="row"><span>محصول:</span><b>${esc(p?p.name:'—')}</b></div>
+      <div class="row"><span>مقدار:</span><b>${fmt(l)} لیتر</b></div>
+      <div class="row"><span>قیمت:</span><b>${fmt(pr)} AFN</b></div>
+      <div class="row"><span>پرداخت:</span><b>${pay==='cash'?'💵 نقد (صندوق +)':'📝 نسیه (صندوق بدون تغییر)'}</b></div>
+      <div class="row total"><span>مبلغ کل:</span><span>${fmt(total)} AFN</span></div>
+    `;
+  }
 }
+
 function submitSale() {
   const today = todayISO();
   if (isDayClosed(today)) { toast('امروز بسته شده است.', 'error'); return; }
@@ -735,29 +790,57 @@ function submitSale() {
   if (!l || l <= 0) { toast('مقدار لیتر الزامی است.', 'error'); return; }
   if (!pr || pr <= 0) { toast('قیمت الزامی است.', 'error'); return; }
   const c = state.customers.find(x=>x.id===cid);
-  if (c?.isWalkIn && pay === 'credit') { toast('Walk-in نسیه مجاز نیست.', 'error'); return; }
-  const total = l*pr;
-  const cashMsg = pay==='cash'
-    ? `💰 صندوق بعد: ${fmt(totalCashOnHand()+total)} AFN`
-    : `📝 به بدهی مشتری اضافه می‌شود`;
-  if (!confirm(
-    `مشتری: ${c?.name}\nمحصول: ${state.products.find(p=>p.id===pid)?.name}\n`+
-    `مقدار: ${fmt(l)} × ${fmt(pr)} = ${fmt(total)} AFN\n`+
-    `پرداخت: ${pay==='cash'?'نقد':'نسیه'}\n\n${cashMsg}\n\nتأیید؟`
-  )) return;
+  if (c?.isWalkIn && pay !== 'cash') {
+    toast('Walk-in فقط نقد مجاز است.', 'error'); return;
+  }
+
+  const total = l * pr;
+  let cashPaid = 0, creditAmount = 0;
+
+  if (pay === 'cash') { cashPaid = total; creditAmount = 0; }
+  else if (pay === 'credit') { cashPaid = 0; creditAmount = total; }
+  else { // mixed
+    cashPaid = parseFloat($('#saleCashPaid').value) || 0;
+    if (cashPaid <= 0) { toast('مبلغ نقد پرداختی الزامی است.', 'error'); return; }
+    if (cashPaid >= total) { toast('مبلغ نقد باید کمتر از مبلغ کل باشد.', 'error'); return; }
+    creditAmount = total - cashPaid;
+  }
+
+  const cashAfter = totalCashOnHand() + cashPaid;
+  let summary = `مشتری: ${c?.name}\nمحصول: ${state.products.find(p=>p.id===pid)?.name}\n`+
+    `مقدار: ${fmt(l)} × ${fmt(pr)} = ${fmt(total)} AFN\n\n`;
+  if (pay === 'mixed') {
+    summary += `💵 نقد: ${fmt(cashPaid)} AFN\n📝 نسیه: ${fmt(creditAmount)} AFN\n\n`+
+      `💰 صندوق بعد: ${fmt(cashAfter)} AFN\n`+
+      `بدهی مشتری بعد: ${fmt(customerBalance(cid)+creditAmount)} AFN`;
+  } else if (pay === 'cash') {
+    summary += `💵 پرداخت نقد کامل\n💰 صندوق بعد: ${fmt(cashAfter)} AFN`;
+  } else {
+    summary += `📝 پرداخت نسیه کامل\nبدهی مشتری بعد: ${fmt(customerBalance(cid)+creditAmount)} AFN`;
+  }
+  summary += '\n\nتأیید؟';
+  if (!confirm(summary)) return;
+
   state.sales.push({
     id: state.nextId.sale++, date: today, time: nowTime(), createdAt: nowISO(),
     customerId: cid, productId: pid, liters: l, pricePerLiter: pr, total,
-    paymentType: pay, status: 'active'
+    paymentType: pay, cashPaid, creditAmount, status: 'active'
   });
-  log('ثبت فروش', `#${state.nextId.sale-1} | ${c?.name} | ${l}L × ${pr} = ${total} | ${pay}`);
+  log('ثبت فروش',
+    `#${state.nextId.sale-1} | ${c?.name} | ${l}L × ${pr} = ${total} | `+
+    (pay==='mixed'
+      ? `ترکیبی: نقد ${cashPaid} + نسیه ${creditAmount}`
+      : pay==='cash' ? 'نقد' : 'نسیه')
+  );
   save();
   $('#saleLiters').value = ''; $('#salePrice').value = '';
+  const cp = $('#saleCashPaid'); if (cp) cp.value = '';
   $('#saleTotal').innerHTML = '0 <span class="unit">AFN</span>';
   $('#saleSummary').innerHTML = '';
   toast('✅ فروش ثبت شد.', 'success');
   render();
 }
+
 function voidSale(id) {
   const s = state.sales.find(x=>x.id===id); if (!s) return;
   if (isDayClosed(s.date)) { toast('روز بسته است.', 'error'); return; }
@@ -767,6 +850,9 @@ function voidSale(id) {
   save(); toast('باطل شد.', 'success'); render();
 }
 
+/* ==========================================================
+   CUSTOMERS
+========================================================== */
 function renderCustomers() {
   const list = [...state.customers].sort((a,b) =>
     a.isWalkIn ? -1 : b.isWalkIn ? 1 : a.name.localeCompare(b.name,'fa'));
@@ -823,7 +909,7 @@ function openCustomerForm(id) {
       <div class="field field-full"><label>توضیحات</label>
         <textarea id="cfNotes" rows="2">${esc(c?.notes||'')}</textarea></div>
       ${!c?`<div class="field field-full">
-        <label>بدهی اولیه (AFN) — اگر از قبل بدهکار است</label>
+        <label>بدهی اولیه (AFN)</label>
         <input type="number" id="cfInit" value="0" step="0.01" inputmode="decimal"></div>`:''}
     </div>`,
     `<button class="btn btn-ghost" onclick="closeModal()">انصراف</button>
@@ -858,8 +944,10 @@ function viewCustomer(id) {
     .sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time));
   const bal = customerBalance(id);
   const totalPurch = sales.reduce((a,s)=>a+s.total,0);
-  const totalCredit = sales.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+  const totalCredit = sales.reduce((a,s)=>a+saleCreditPortion(s),0);
+  const totalCash = sales.reduce((a,s)=>a+saleCashPortion(s),0);
   const totalPaid = pays.reduce((a,p)=>a+p.amount,0);
+  const creditSales = sales.filter(s => saleCreditPortion(s) > 0);
   showModal(`👤 ${esc(c.name)}`, `
     <div class="dash-grid mb">
       <div class="stat"><span class="label">مجموع خرید</span>
@@ -873,16 +961,17 @@ function viewCustomer(id) {
     </div>
     <div class="muted">📞 ${esc(c.phone||'—')} | 📍 ${esc(c.address||'—')}
       ${c.notes?'<br>📝 '+esc(c.notes):''}</div>
-    <h3 class="mt">🧾 خریدهای نسیه</h3>
-    ${sales.filter(s=>s.paymentType==='credit').length ? `
+    <h3 class="mt">🧾 خریدهای با نسیه</h3>
+    ${creditSales.length ? `
       <div class="table-wrap"><table><thead><tr>
-        <th>تاریخ</th><th>محصول</th><th>لیتر</th><th>مبلغ</th>
+        <th>تاریخ</th><th>محصول</th><th>لیتر</th><th>مبلغ کل</th><th>نسیه</th>
       </tr></thead><tbody>
-        ${sales.filter(s=>s.paymentType==='credit').map(s => {
+        ${creditSales.map(s => {
           const p = state.products.find(x=>x.id===s.productId);
           return `<tr><td>${formatDate(s.date)} <span class="muted">${esc(s.time)}</span></td>
             <td>${esc(p?p.name:'—')}</td><td class="num">${fmt(s.liters)}</td>
-            <td class="num neg">${fmt(s.total)}</td></tr>`;
+            <td class="num">${fmt(s.total)}</td>
+            <td class="num neg">${fmt(saleCreditPortion(s))}</td></tr>`;
         }).join('')}
       </tbody></table></div>` : '<div class="muted">ندارد.</div>'}
     <h3 class="mt">💵 پرداخت‌ها</h3>
@@ -895,6 +984,9 @@ function viewCustomer(id) {
     `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
 }
 
+/* ==========================================================
+   PRODUCTS
+========================================================== */
 function renderProducts() {
   return `
     <div class="card">
@@ -959,6 +1051,9 @@ function toggleProduct(id) {
   save(); render();
 }
 
+/* ==========================================================
+   DEBT PAYMENT
+========================================================== */
 function renderDebtPayment() {
   const today = todayISO();
   const closed = isDayClosed(today);
@@ -966,8 +1061,7 @@ function renderDebtPayment() {
     .filter(c => !c.isWalkIn && customerBalance(c.id) > 0)
     .sort((a,b) => customerBalance(b.id)-customerBalance(a.id));
   const recent = state.debtPayments.filter(p => p.status !== 'voided')
-    .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||''))
-    .slice(0, 20);
+    .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||'')).slice(0, 20);
   return `
     ${closed ? `<div class="warning-banner">🔒 امروز بسته است.</div>` : ''}
     <div class="card">
@@ -1044,6 +1138,9 @@ function submitDebtPayment() {
   save(); toast('✅ دریافت ثبت شد — صندوق افزایش یافت.', 'success'); render();
 }
 
+/* ==========================================================
+   LOANS
+========================================================== */
 function renderLoans() {
   const today = todayISO();
   const closed = isDayClosed(today);
@@ -1186,17 +1283,23 @@ function viewLoan(lid) {
     `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
 }
 
+/* ==========================================================
+   CASH PAGE
+========================================================== */
 let cashFilter = { from: todayISO(), to: todayISO() };
 function renderCash() {
   const f = cashFilter;
   const cs = cashSummary(f.from || null, f.to || null);
   const movements = [];
-  state.sales.filter(s => s.status!=='voided' && s.paymentType==='cash')
+  state.sales.filter(s => s.status!=='voided')
     .filter(s => (!f.from||s.date>=f.from) && (!f.to||s.date<=f.to))
     .forEach(s => {
+      const cp = saleCashPortion(s);
+      if (cp <= 0) return;
       const c = state.customers.find(x=>x.id===s.customerId);
-      movements.push({ date:s.date, time:s.time, type:'in', amount:s.total,
-        label:`فروش نقدی — ${c?.name||''}`, ref:`#${s.id}` });
+      movements.push({ date:s.date, time:s.time, type:'in', amount:cp,
+        label:`فروش ${s.paymentType==='mixed'?'(ترکیبی، بخش نقد)':'نقدی'} — ${c?.name||''}`,
+        ref:`#${s.id}` });
     });
   state.debtPayments.filter(p => p.status!=='voided')
     .filter(p => (!f.from||p.date>=f.from) && (!f.to||p.date<=f.to))
@@ -1245,7 +1348,7 @@ function renderCash() {
       <div class="table-wrap"><table><thead><tr>
         <th>منبع</th><th>نوع</th><th>مبلغ (AFN)</th>
       </tr></thead><tbody>
-        <tr><td>فروش نقدی</td>
+        <tr><td>فروش نقدی + بخش نقد فروش ترکیبی</td>
           <td><span class="badge badge-cash">ورود ↑</span></td>
           <td class="num pos">+${fmt(cs.cashSales)}</td></tr>
         <tr><td>دریافت پول نسیه از مشتریان</td>
@@ -1292,7 +1395,7 @@ function renderCash() {
         <div class="field"><label>تا تاریخ</label>
           <input type="date" value="${f.to}" onchange="cashFilter.to=this.value;render()"></div>
         <div class="field"><label>&nbsp;</label>
-          <button class="btn btn-ghost" onclick="cashFilter={from:'',to:''};render()">نمایش همه</button></div>
+          <button class="btn btn-ghost" onclick="cashFilter={from:'',to:''};render()">همه</button></div>
         <div class="field"><label>&nbsp;</label>
           <button class="btn btn-ghost" onclick="cashFilter={from:todayISO(),to:todayISO()};render()">امروز</button></div>
       </div>
@@ -1331,6 +1434,9 @@ function submitAdjustment() {
   render();
 }
 
+/* ==========================================================
+   CLOSE DAY
+========================================================== */
 function closeDay() {
   const today = todayISO();
   if (isDayClosed(today)) { toast('قبلاً بسته شده.', 'error'); return; }
@@ -1339,7 +1445,9 @@ function closeDay() {
   if (!confirm(
     `بستن روز ${formatDate(today)}؟\n\n`+
     `معاملات: ${s.count}\nلیتر: ${fmt(s.totalLiters)}\n`+
-    `فروش: ${fmt(s.totalSales)} AFN\nنقد: ${fmt(s.cashSales)}\nنسیه: ${fmt(s.creditSales)}\n\n`+
+    `فروش: ${fmt(s.totalSales)} AFN\n`+
+    `نقد (شامل ترکیبی): ${fmt(s.cashSales)}\n`+
+    `نسیه (شامل ترکیبی): ${fmt(s.creditSales)}\n\n`+
     `💰 ورودی نقدی: ${fmt(cs.totalIn)}\n💸 خروجی نقدی: ${fmt(cs.totalOut)}\n`+
     `خالص: ${fmt(cs.net)} AFN`
   )) return;
@@ -1355,6 +1463,9 @@ function reopenDay(date) {
   save(); toast('🔓 باز شد.', 'success'); render();
 }
 
+/* ==========================================================
+   DAILY REPORT
+========================================================== */
 let dailyReportDate = todayISO();
 function renderDailyReport() {
   const date = dailyReportDate;
@@ -1399,7 +1510,7 @@ function renderDailyReport() {
       <div class="table-wrap mt"><table><thead><tr>
         <th>جزئیات</th><th>مبلغ (AFN)</th>
       </tr></thead><tbody>
-        <tr><td>فروش نقدی</td><td class="num pos">+${fmt(cs.cashSales)}</td></tr>
+        <tr><td>فروش نقدی + بخش نقد ترکیبی</td><td class="num pos">+${fmt(cs.cashSales)}</td></tr>
         <tr><td>دریافت بدهی مشتریان</td><td class="num pos">+${fmt(cs.debtPaid)}</td></tr>
         <tr><td>برگشت قرض نقدی</td><td class="num pos">+${fmt(cs.loanReturn)}</td></tr>
         <tr><td>قرض نقدی داده‌شده</td><td class="num neg">-${fmt(cs.loansOut)}</td></tr>
@@ -1414,9 +1525,9 @@ function renderDailyReport() {
           <span class="value">${fmt(s.totalLiters)}</span></div>
         <div class="stat green"><span class="label">مجموع فروش</span>
           <span class="value">${fmt(s.totalSales)}</span></div>
-        <div class="stat blue"><span class="label">نقد</span>
+        <div class="stat blue"><span class="label">نقد (شامل ترکیبی)</span>
           <span class="value">${fmt(s.cashSales)}</span></div>
-        <div class="stat red"><span class="label">نسیه</span>
+        <div class="stat red"><span class="label">نسیه (شامل ترکیبی)</span>
           <span class="value">${fmt(s.creditSales)}</span></div>
       </div>
     </div>
@@ -1465,6 +1576,9 @@ function renderDailyReport() {
     </div>`;
 }
 
+/* ==========================================================
+   GENERAL REPORT
+========================================================== */
 let genFilters = { from:'', to:'', customerId:'', productId:'', paymentType:'' };
 function renderGeneralReport() {
   const f = genFilters;
@@ -1475,8 +1589,8 @@ function renderGeneralReport() {
   if (f.productId) sales = sales.filter(s => s.productId === Number(f.productId));
   if (f.paymentType) sales = sales.filter(s => s.paymentType === f.paymentType);
   const total = sales.reduce((a,s)=>a+s.total,0);
-  const cash = sales.filter(s=>s.paymentType==='cash').reduce((a,s)=>a+s.total,0);
-  const credit = sales.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+  const cash = sales.reduce((a,s)=>a+saleCashPortion(s),0);
+  const credit = sales.reduce((a,s)=>a+saleCreditPortion(s),0);
   const liters = sales.reduce((a,s)=>a+s.liters,0);
   const cs = cashSummary(f.from||null, f.to||null);
   const byProduct = {};
@@ -1487,7 +1601,7 @@ function renderGeneralReport() {
   }
   const custRows = state.customers.filter(c => !c.isWalkIn).map(c => {
     const cs2 = sales.filter(s => s.customerId === c.id);
-    const cc = cs2.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+    const cc = cs2.reduce((a,s)=>a+saleCreditPortion(s),0);
     const cp = cs2.reduce((a,s)=>a+s.total,0);
     let pays = state.debtPayments.filter(p => p.status!=='voided' && p.customerId===c.id);
     if (f.from) pays = pays.filter(p => p.date >= f.from);
@@ -1521,6 +1635,7 @@ function renderGeneralReport() {
             <option value="">— همه —</option>
             <option value="cash" ${f.paymentType==='cash'?'selected':''}>نقد</option>
             <option value="credit" ${f.paymentType==='credit'?'selected':''}>نسیه</option>
+            <option value="mixed" ${f.paymentType==='mixed'?'selected':''}>ترکیبی</option>
           </select></div>
         <div class="field"><label>&nbsp;</label>
           <button class="btn btn-ghost" onclick="genFilters={from:'',to:'',customerId:'',productId:'',paymentType:''};render()">🗑 پاک کردن</button></div>
@@ -1531,9 +1646,9 @@ function renderGeneralReport() {
       <div class="dash-grid">
         <div class="stat green"><span class="label">مجموع فروش</span>
           <span class="value">${fmt(total)}</span><span class="sub">AFN</span></div>
-        <div class="stat blue"><span class="label">نقد</span>
+        <div class="stat blue"><span class="label">نقد (شامل ترکیبی)</span>
           <span class="value">${fmt(cash)}</span><span class="sub">AFN</span></div>
-        <div class="stat red"><span class="label">نسیه</span>
+        <div class="stat red"><span class="label">نسیه (شامل ترکیبی)</span>
           <span class="value">${fmt(credit)}</span><span class="sub">AFN</span></div>
         <div class="stat"><span class="label">مجموع لیتر</span>
           <span class="value">${fmt(liters)}</span><span class="sub">لیتر</span></div>
@@ -1599,6 +1714,9 @@ function renderGeneralReport() {
   `;
 }
 
+/* ==========================================================
+   LOGS
+========================================================== */
 function renderLogs() {
   const logs = [...state.logs].sort((a,b) =>
     (b.timestamp||'').localeCompare(a.timestamp||''));
@@ -1629,7 +1747,7 @@ function exportData() {
   a.href = URL.createObjectURL(blob);
   a.download = `till-backup-${todayISO()}.json`;
   a.click();
-  toast('📥 فایل پشتیبان ذخیره شد.', 'success');
+  toast('📥 پشتیبان ذخیره شد.', 'success');
 }
 function importData() {
   const inp = document.createElement('input');
@@ -1677,7 +1795,7 @@ window.installPWA = async function() {
   if (!deferredPrompt) {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     alert(isIOS
-      ? '📱 برای نصب روی iPhone:\n\n1. این صفحه را در Safari باز کنید\n2. دکمه Share (□↑) را بزنید\n3. Add to Home Screen\n4. Add'
+      ? '📱 برای نصب روی iPhone:\n\n1. در Safari باز کنید\n2. Share (□↑)\n3. Add to Home Screen\n4. Add'
       : '📱 منوی مرورگر → Install app / Add to Home screen');
     return;
   }
@@ -1694,7 +1812,7 @@ const isStandalone = window.matchMedia('(display-mode: standalone)').matches
 if (isIOS && !isStandalone) installBtn.style.display = 'flex';
 
 render();
-console.log('✅ App loaded');
+console.log('✅ App loaded — with mixed payment support');
 </script>
 </body>
 </html>
