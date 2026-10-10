@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>حسابداری تیل‌فروشی</title>
+
+<!-- ========== PWA META ========== -->
+<meta name="theme-color" content="#0d7377">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="تیل‌فروشی">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="سیستم حسابداری و مدیریت فروش تیل‌فروشی — کاملاً آفلاین">
+
+<!-- Inline Icon (SVG data URI) -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==">
+
+<!-- Inline Manifest -->
+<link rel="manifest" href='data:application/manifest+json,{"name":"حسابداری تیل‌فروشی","short_name":"تیل‌فروشی","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"%230d7377","theme_color":"%230d7377","lang":"fa","dir":"rtl","icons":[{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]}'>
+
+<style>
+:root{
+  --primary:#0d7377;--primary-dark:#095456;--primary-light:#14b8a6;
+  --bg:#f1f5f9;--card:#fff;--text:#0f172a;--muted:#64748b;
+  --border:#e2e8f0;--danger:#dc2626;--success:#16a34a;
+  --warning:#ea580c;--info:#0284c7;--radius:12px;
+  --shadow:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:Tahoma,'Segoe UI',system-ui,sans-serif;background:var(--bg);
+  color:var(--text);direction:rtl;line-height:1.6;min-height:100vh;
+  padding-bottom:80px;overflow-x:hidden}
+button{font-family:inherit;cursor:pointer;border:none}
+input,select,textarea{font-family:inherit;font-size:16px}
+.unit{font-size:.8em;color:var(--muted);font-weight:normal}
+
+.app{max-width:1300px;margin:0 auto;padding:12px}
+.header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#fff;padding:14px 18px;border-radius:var(--radius);display:flex;
+  justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+  box-shadow:var(--shadow)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{font-size:32px;background:rgba(255,255,255,.15);width:50px;height:50px;
+  border-radius:12px;display:flex;align-items:center;justify-content:center}
+.brand h1{font-size:17px;font-weight:700}
+.subtitle{font-size:12px;opacity:.85;margin-top:2px}
+.cash-badge{background:rgba(255,255,255,.2);padding:8px 14px;border-radius:10px;
+  text-align:center;font-size:11px}
+.cash-badge .cash-val{font-size:16px;font-weight:800;display:block;
+  font-variant-numeric:tabular-nums}
+.cash-badge .cash-lbl{opacity:.9}
+
+.nav{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0;background:var(--card);
+  padding:6px;border-radius:var(--radius);box-shadow:var(--shadow)}
+.nav button{background:transparent;color:var(--text);padding:9px 12px;
+  border-radius:8px;font-size:13px;font-weight:600;transition:.15s;
+  display:flex;align-items:center;gap:5px;white-space:nowrap}
+.nav button:hover{background:#f1f5f9}
+.nav button.active{background:var(--primary);color:#fff}
+
+.content{display:flex;flex-direction:column;gap:12px}
+
+.card{background:var(--card);border-radius:var(--radius);padding:16px;
+  box-shadow:var(--shadow)}
+.card h2{font-size:16px;margin-bottom:12px;color:var(--primary-dark);
+  display:flex;align-items:center;gap:8px;padding-bottom:8px;
+  border-bottom:1px solid var(--border)}
+.card h3{font-size:14px;margin:10px 0 8px;color:var(--primary-dark)}
+
+.btn{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;
+  transition:.15s;display:inline-flex;align-items:center;gap:6px;
+  justify-content:center;min-height:42px}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-success{background:var(--success);color:#fff}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-warning{background:var(--warning);color:#fff}
+.btn-info{background:var(--info);color:#fff}
+.btn-ghost{background:#f1f5f9;color:var(--text)}
+.btn-ghost:hover{background:#e2e8f0}
+.btn-lg{padding:16px 20px;font-size:16px;width:100%}
+.btn-sm{padding:6px 10px;font-size:12px;min-height:32px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-size:12px;font-weight:600;color:var(--muted)}
+.field input,.field select,.field textarea{padding:10px 12px;border:1px solid var(--border);
+  border-radius:8px;background:#fff;transition:.15s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,115,119,.1)}
+.field input[readonly]{background:#f8fafc;color:var(--muted)}
+.field-full{grid-column:1/-1}
+
+.total-display{font-size:20px;font-weight:800;color:var(--primary-dark);
+  background:#f0fdfa;padding:10px 14px;border-radius:8px;
+  border:2px dashed var(--primary-light);text-align:center;
+  font-variant-numeric:tabular-nums}
+
+.radio-group{display:flex;gap:8px}
+.radio-group label{flex:1;padding:10px;border:2px solid var(--border);
+  border-radius:8px;cursor:pointer;text-align:center;font-weight:600;
+  font-size:13px;transition:.15s;background:#fff}
+.radio-group label.checked{border-color:var(--primary);background:#f0fdfa;
+  color:var(--primary-dark)}
+.radio-group input{display:none}
+
+.summary-box{background:#f8fafc;border:1px solid var(--border);
+  border-radius:8px;padding:12px;margin:12px 0;font-size:13px}
+.summary-box .row{display:flex;justify-content:space-between;padding:3px 0}
+.summary-box .row.total{border-top:1px solid var(--border);margin-top:5px;
+  padding-top:7px;font-size:15px;font-weight:800;color:var(--primary-dark)}
+
+.table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);
+  -webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;
+  min-width:560px}
+th{background:#f8fafc;padding:9px 10px;text-align:right;font-weight:700;
+  color:var(--muted);font-size:11px;border-bottom:1px solid var(--border);
+  white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#f8fafc}
+.text-center{text-align:center}
+.text-left{text-align:left}
+.num{font-variant-numeric:tabular-nums;font-weight:600}
+.pos{color:var(--success)}
+.neg{color:var(--danger)}
+.empty-state{padding:30px 20px;text-align:center;color:var(--muted);
+  font-size:13px}
+
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;
+  font-size:10px;font-weight:700}
+.badge-cash{background:#dcfce7;color:#166534}
+.badge-credit{background:#fee2e2;color:#991b1b}
+.badge-active{background:#dcfce7;color:#166534}
+.badge-inactive{background:#f1f5f9;color:#64748b}
+.badge-closed{background:#fef3c7;color:#92400e}
+.badge-open{background:#dbeafe;color:#1e40af}
+.badge-voided{background:#f1f5f9;color:#64748b;text-decoration:line-through}
+.badge-warning{background:#ffedd5;color:#9a3412}
+.badge-success{background:#dcfce7;color:#166534}
+.badge-danger{background:#fee2e2;color:#991b1b}
+
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:10px}
+.stat{background:var(--card);border-radius:var(--radius);padding:14px;
+  box-shadow:var(--shadow);border-right:4px solid var(--primary);
+  display:flex;flex-direction:column;gap:4px}
+.stat.blue{border-color:var(--info)}
+.stat.green{border-color:var(--success)}
+.stat.red{border-color:var(--danger)}
+.stat.orange{border-color:var(--warning)}
+.stat.cash{border-color:#059669;background:linear-gradient(135deg,#fff,#f0fdf4)}
+.stat .label{font-size:11px;color:var(--muted);font-weight:600}
+.stat .value{font-size:20px;font-weight:800;color:var(--text);
+  font-variant-numeric:tabular-nums}
+.stat .sub{font-size:10px;color:var(--muted)}
+
+.quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px}
+.quick-btn{padding:16px 10px;border-radius:12px;background:#fff;
+  box-shadow:var(--shadow);border:1px solid var(--border);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-weight:700;color:var(--text);transition:.15s;font-size:12px}
+.quick-btn:hover{border-color:var(--primary);transform:translateY(-2px)}
+.quick-btn .ico{font-size:24px}
+.quick-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);
+  display:flex;align-items:center;justify-content:center;padding:12px;
+  z-index:1000;animation:fadeIn .15s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal{background:#fff;border-radius:var(--radius);width:100%;max-width:620px;
+  max-height:92vh;overflow-y:auto;box-shadow:0 20px 50px rgba(0,0,0,.3);
+  animation:slideUp .2s}
+@keyframes slideUp{from{transform:translateY(20px);opacity:0}
+  to{transform:translateY(0);opacity:1}}
+.modal-header{padding:14px 16px;border-bottom:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;top:0;background:#fff;z-index:1}
+.modal-header h3{font-size:15px;color:var(--primary-dark)}
+.close-btn{background:transparent;font-size:24px;color:var(--muted);
+  width:30px;height:30px;border-radius:8px;display:flex;align-items:center;
+  justify-content:center;line-height:1}
+.close-btn:hover{background:#f1f5f9}
+.modal-body{padding:16px}
+.modal-footer{padding:12px 16px;border-top:1px solid var(--border);
+  display:flex;gap:8px;justify-content:flex-end;position:sticky;bottom:0;
+  background:#fff}
+
+.row-between{display:flex;justify-content:space-between;align-items:center;
+  gap:10px;flex-wrap:wrap}
+.flex{display:flex;gap:8px;flex-wrap:wrap}
+.mt{margin-top:12px}
+.mb{margin-bottom:12px}
+.muted{color:var(--muted);font-size:12px}
+.divider{height:1px;background:var(--border);margin:12px 0}
+.warning-banner{background:#fef3c7;color:#92400e;padding:12px 16px;
+  border-radius:8px;border-right:4px solid var(--warning);font-size:13px;
+  font-weight:600}
+.info-banner{background:#dbeafe;color:#1e40af;padding:12px 16px;
+  border-radius:8px;border-right:4px solid var(--info);font-size:13px}
+.success-banner{background:#dcfce7;color:#166534;padding:12px 16px;
+  border-radius:8px;border-right:4px solid var(--success);font-size:13px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  background:#0f172a;color:#fff;padding:12px 22px;border-radius:10px;
+  font-size:13px;font-weight:600;z-index:2000;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);animation:slideUp .2s;
+  max-width:90vw;text-align:center}
+.toast.success{background:var(--success)}
+.toast.error{background:var(--danger)}
+
+.search-box{position:relative}
+.search-box input{padding-right:34px}
+.search-box::before{content:"🔍";position:absolute;right:10px;top:50%;
+  transform:translateY(-50%);font-size:13px;opacity:.6}
+
+#pwaInstallBtn{position:fixed;bottom:16px;left:16px;z-index:999;
+  background:var(--primary);color:#fff;padding:11px 18px;
+  border-radius:50px;font-size:13px;font-weight:700;display:none;
+  align-items:center;gap:6px;box-shadow:0 6px 20px rgba(13,115,119,.4)}
+
+@media (max-width:640px){
+  .app{padding:8px}
+  .header{padding:12px}
+  .brand h1{font-size:15px}
+  .logo{width:42px;height:42px;font-size:26px}
+  .nav{padding:5px;overflow-x:auto;flex-wrap:nowrap}
+  .nav button{padding:8px 10px;font-size:12px}
+  .card{padding:12px}
+  .stat .value{font-size:17px}
+  .cash-badge .cash-val{font-size:14px}
+  table{font-size:11px;min-width:520px}
+  th,td{padding:7px 8px}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="brand">
+      <div class="logo">⛽</div>
+      <div>
+        <h1>حسابداری تیل‌فروشی</h1>
+        <div class="subtitle" id="todayDate"></div>
+      </div>
+    </div>
+    <div class="cash-badge">
+      <span class="cash-lbl">💰 صندوق (AFN)</span>
+      <span class="cash-val" id="headerCash">0</span>
+    </div>
+  </header>
+  <nav class="nav" id="nav"></nav>
+  <main class="content" id="content"></main>
+</div>
+<div id="modalRoot"></div>
+<button id="pwaInstallBtn" onclick="installPWA()">📲 نصب برنامه</button>
+
+<script>
+/* ==================================================================
+   STATE / STORAGE
+================================================================== */
+const STORAGE_KEY = 'till_accounting_v2';
+
+function defaultState() {
+  return {
+    customers: [
+      { id:1, name:'مشتری عادی (Walk-in)', phone:'', address:'',
+        notes:'مشتری نقدی – فروش نسیه ندارد', isWalkIn:true }
+    ],
+    products: [
+      { id:1, name:'پترول', unit:'لیتر', price:65, active:true },
+      { id:2, name:'دیزل', unit:'لیتر', price:70, active:true },
+      { id:3, name:'تیل موتر', unit:'لیتر', price:250, active:true }
+    ],
+    sales: [],
+    debtPayments: [],
+    loans: [],
+    loanPayments: [],
+    cashAdjustments: [],   // manual cash in/out
+    closedDays: {},
+    logs: [],
+    nextId: { customer:2, product:4, sale:1, debtPayment:1, loan:1,
+              loanPayment:1, log:1, adj:1 }
+  };
+}
+
+let state;
+try {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  state = raw ? JSON.parse(raw) : defaultState();
+  if (!state.customers.some(c => c.isWalkIn))
+    state.customers.unshift(defaultState().customers[0]);
+  if (!state.cashAdjustments) state.cashAdjustments = [];
+} catch (e) { state = defaultState(); }
+
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+
+/* ==================================================================
+   HELPERS
+================================================================== */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({
+  '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+}[c]));
+function fmt(n) {
+  const v = Number(n) || 0;
+  return new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(v);
+}
+function todayISO() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function nowTime() {
+  const d = new Date();
+  return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+function nowISO() { return new Date().toISOString(); }
+
+function toJalali(gy, gm, gd) {
+  const g_d_m = [0,31,59,90,120,151,181,212,243,273,304,334];
+  let jy = (gy <= 1600) ? 0 : 979;
+  gy -= (gy <= 1600) ? 621 : 1600;
+  const gy2 = (gm > 2) ? (gy + 1) : gy;
+  let days = (365*gy) + Math.floor((gy2+3)/4) - Math.floor((gy2+99)/100)
+           + Math.floor((gy2+399)/400) - 80 + gd + g_d_m[gm-1];
+  jy += 33*Math.floor(days/12053);
+  days %= 12053;
+  jy += 4*Math.floor(days/1461);
+  days %= 1461;
+  if (days > 365) { jy += Math.floor((days-1)/365); days = (days-1)%365; }
+  const jm = (days < 186) ? 1 + Math.floor(days/31) : 7 + Math.floor((days-186)/30);
+  const jd = 1 + ((days < 186) ? (days%31) : ((days-186)%30));
+  return [jy, jm, jd];
+}
+const JM = ['حمل','ثور','جوزا','سرطان','اسد','سنبله',
+            'میزان','عقرب','قوس','جدی','دلو','حوت'];
+function formatDate(iso) {
+  if (!iso) return '';
+  const [y,m,d] = iso.split('-').map(Number);
+  const [jy,jm,jd] = toJalali(y,m,d);
+  return `${jd} ${JM[jm-1]} ${jy}`;
+}
+function formatDateTime(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  const date = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+  return `${formatDate(date)} – ${time}`;
+}
+
+function toast(msg, type='') {
+  const el = document.createElement('div');
+  el.className = 'toast ' + type;
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+}
+function log(action, details) {
+  state.logs.push({ id:state.nextId.log++, timestamp:nowISO(), action, details });
+  save();
+}
+function isDayClosed(date) { return !!state.closedDays[date]; }
+
+/* ==================================================================
+   CASH FLOW  ★★★  (CORE NEW FEATURE)  ★★★
+   Every cash movement increases/decreases صندوق
+================================================================== */
+
+// Cash inflow from sales (CASH sales only — credit sales don't affect cash)
+function cashFromSales(from, to) {
+  return state.sales
+    .filter(s => s.status !== 'voided' && s.paymentType === 'cash')
+    .filter(s => (!from || s.date >= from) && (!to || s.date <= to))
+    .reduce((a,s) => a + s.total, 0);
+}
+
+// Cash received from customers paying off their credit (this is a CASH INFLOW)
+function cashFromDebtPayments(from, to) {
+  return state.debtPayments
+    .filter(p => p.status !== 'voided')
+    .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
+    .reduce((a,p) => a + p.amount, 0);
+}
+
+// Cash received from personal loan returns (this is a CASH INFLOW)
+function cashFromLoanReturns(from, to) {
+  return state.loanPayments
+    .filter(p => p.status !== 'voided')
+    .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
+    .reduce((a,p) => a + p.amount, 0);
+}
+
+// Cash OUT: personal loans given away (money leaves the till)
+function cashOutLoans(from, to) {
+  return state.loans
+    .filter(l => l.status !== 'voided')
+    .filter(l => (!from || l.date >= from) && (!to || l.date <= to))
+    .reduce((a,l) => a + l.amount, 0);
+}
+
+// Manual cash adjustments (opening balance, expenses, etc.)
+function cashFromAdjustments(from, to) {
+  return state.cashAdjustments
+    .filter(a => a.status !== 'voided')
+    .filter(a => (!from || a.date >= from) && (!to || a.date <= to))
+    .reduce((a,x) => a + (x.type === 'in' ? x.amount : -x.amount), 0);
+}
+
+// Full cash summary for a period
+function cashSummary(from, to) {
+  const cashSales   = cashFromSales(from, to);
+  const debtPaid    = cashFromDebtPayments(from, to);
+  const loanReturn  = cashFromLoanReturns(from, to);
+  const loansOut    = cashOutLoans(from, to);
+  const adjustments = cashFromAdjustments(from, to);
+  const totalIn  = cashSales + debtPaid + loanReturn + Math.max(adjustments, 0);
+  const totalOut = loansOut + Math.max(-adjustments, 0);
+  return {
+    cashSales, debtPaid, loanReturn, loansOut, adjustments,
+    totalIn, totalOut, net: totalIn - totalOut
+  };
+}
+
+// Total cash on hand (all time)
+function totalCashOnHand() {
+  return cashSummary(null, null).net;
+}
+
+/* ==================================================================
+   CUSTOMER & LOAN CALCULATIONS
+================================================================== */
+function customerBalance(cid) {
+  const credit = state.sales
+    .filter(s => s.customerId === cid && s.paymentType === 'credit'
+              && s.status !== 'voided')
+    .reduce((a,s) => a + s.total, 0);
+  const paid = state.debtPayments
+    .filter(p => p.customerId === cid && p.status !== 'voided')
+    .reduce((a,p) => a + p.amount, 0);
+  const init = state.customers.find(c => c.id === cid)?.initialBalance || 0;
+  return credit + init - paid;
+}
+function customerTotalPurchases(cid) {
+  return state.sales
+    .filter(s => s.customerId === cid && s.status !== 'voided')
+    .reduce((a,s) => a + s.total, 0);
+}
+function loanPaid(lid) {
+  return state.loanPayments
+    .filter(p => p.loanId === lid && p.status !== 'voided')
+    .reduce((a,p) => a + p.amount, 0);
+}
+function loanRemaining(lid) {
+  const l = state.loans.find(x => x.id === lid);
+  if (!l) return 0;
+  return l.amount - loanPaid(lid);
+}
+function loanStatus(lid) {
+  const l = state.loans.find(x => x.id === lid);
+  if (!l) return 'unknown';
+  if (l.status === 'voided') return 'voided';
+  const paid = loanPaid(lid);
+  if (paid <= 0) return 'unpaid';
+  if (paid >= l.amount) return 'paid';
+  return 'partial';
+}
+
+/* ==================================================================
+   DAY SUMMARY
+================================================================== */
+function daySummary(date) {
+  const sales = state.sales.filter(s => s.date === date && s.status !== 'voided');
+  const debtPayments = state.debtPayments.filter(p => p.date === date && p.status !== 'voided');
+  const loansGiven = state.loans.filter(l => l.date === date && l.status !== 'voided');
+  const loanPaymentsList = state.loanPayments.filter(p => p.date === date && p.status !== 'voided');
+
+  const totalLiters = sales.reduce((a,s) => a + s.liters, 0);
+  const totalSales = sales.reduce((a,s) => a + s.total, 0);
+  const cashSales = sales.filter(s => s.paymentType === 'cash')
+                         .reduce((a,s) => a + s.total, 0);
+  const creditSales = sales.filter(s => s.paymentType === 'credit')
+                           .reduce((a,s) => a + s.total, 0);
+  const debtCollected = debtPayments.reduce((a,p) => a + p.amount, 0);
+  const loansGivenTotal = loansGiven.reduce((a,l) => a + l.amount, 0);
+  const loansReturnedTotal = loanPaymentsList.reduce((a,p) => a + p.amount, 0);
+
+  // Cash movement of the day
+  const cashIn = cashSales + debtCollected + loansReturnedTotal;
+  const cashOut = loansGivenTotal;
+  const netCash = cashIn - cashOut;
+
+  const byProduct = {};
+  for (const s of sales) {
+    if (!byProduct[s.productId]) byProduct[s.productId] = { liters:0, total:0 };
+    byProduct[s.productId].liters += s.liters;
+    byProduct[s.productId].total += s.total;
+  }
+
+  return {
+    date, count: sales.length, totalLiters, totalSales, cashSales, creditSales,
+    debtCollected, loansGivenTotal, loansReturnedTotal,
+    cashIn, cashOut, netCash,
+    byProduct, salesList: sales, debtPaymentsList: debtPayments,
+    loansGivenList: loansGiven, loanPaymentsList
+  };
+}
+
+/* ==================================================================
+   NAV / RENDER
+================================================================== */
+let currentPage = 'dashboard';
+const NAV_ITEMS = [
+  { id:'dashboard',      icon:'🏠', label:'داشبورد' },
+  { id:'sale',           icon:'💰', label:'ثبت فروش' },
+  { id:'customers',      icon:'👥', label:'مشتریان' },
+  { id:'products',       icon:'📦', label:'محصولات' },
+  { id:'debt-payment',   icon:'💵', label:'دریافت پول نسیه' },
+  { id:'loans',          icon:'🤝', label:'قرض نقدی' },
+  { id:'cash',           icon:'💼', label:'صندوق / نقدی' },
+  { id:'daily-report',   icon:'📅', label:'راپور روزانه' },
+  { id:'general-report', icon:'📊', label:'راپور عمومی' },
+  { id:'logs',           icon:'📋', label:'لاگ' }
+];
+
+function navigate(page) { currentPage = page; render(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function renderNav() {
+  $('#nav').innerHTML = NAV_ITEMS.map(i =>
+    `<button class="${currentPage===i.id?'active':''}" onclick="navigate('${i.id}')">
+      <span>${i.icon}</span><span>${i.label}</span></button>`
+  ).join('');
+}
+
+function render() {
+  $('#todayDate').textContent = `امروز: ${formatDate(todayISO())}` +
+    (isDayClosed(todayISO()) ? ' 🔒' : '');
+  $('#headerCash').textContent = fmt(totalCashOnHand());
+  renderNav();
+  const pages = {
+    dashboard: renderDashboard, sale: renderSale,
+    customers: renderCustomers, products: renderProducts,
+    'debt-payment': renderDebtPayment, loans: renderLoans,
+    cash: renderCash, 'daily-report': renderDailyReport,
+    'general-report': renderGeneralReport, logs: renderLogs
+  };
+  $('#content').innerHTML = (pages[currentPage] || renderDashboard)();
+}
+
+/* ==================================================================
+   DASHBOARD
+================================================================== */
+function renderDashboard() {
+  const today = todayISO();
+  const s = daySummary(today);
+  const cs = cashSummary(today, today);
+  const closed = isDayClosed(today);
+
+  return `
+    ${closed ? `<div class="warning-banner">🔒 امروز (${formatDate(today)}) بسته شده است.</div>` : ''}
+
+    <div class="card">
+      <h2>💼 وضعیت صندوق (نقدی موجود)</h2>
+      <div class="dash-grid">
+        <div class="stat cash">
+          <span class="label">💰 صندوق فعلی</span>
+          <span class="value">${fmt(totalCashOnHand())}</span>
+          <span class="sub">AFN — موجودی کل</span>
+        </div>
+        <div class="stat green">
+          <span class="label">↑ ورودی نقدی امروز</span>
+          <span class="value">${fmt(cs.totalIn)}</span>
+          <span class="sub">AFN</span>
+        </div>
+        <div class="stat red">
+          <span class="label">↓ خروجی نقدی امروز</span>
+          <span class="value">${fmt(cs.totalOut)}</span>
+          <span class="sub">AFN</span>
+        </div>
+        <div class="stat ${cs.net>=0?'green':'red'}">
+          <span class="label">خالص امروز</span>
+          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span>
+          <span class="sub">AFN</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 خلاصه امروز — ${formatDate(today)}</h2>
+      <div class="dash-grid">
+        <div class="stat green"><span class="label">فروش امروز</span>
+          <span class="value">${fmt(s.totalSales)}</span>
+          <span class="sub">AFN — ${fmt(s.totalLiters)} لیتر</span></div>
+        <div class="stat blue"><span class="label">فروش نقدی</span>
+          <span class="value">${fmt(s.cashSales)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">فروش نسیه</span>
+          <span class="value">${fmt(s.creditSales)}</span><span class="sub">AFN</span></div>
+        <div class="stat orange"><span class="label">دریافت از بدهکاران</span>
+          <span class="value">${fmt(s.debtCollected)}</span><span class="sub">AFN — 💰 نقد</span></div>
+        <div class="stat"><span class="label">قرض نقدی داده‌شده</span>
+          <span class="value">${fmt(s.loansGivenTotal)}</span><span class="sub">AFN — ↓ خروج</span></div>
+        <div class="stat green"><span class="label">برگشت قرض نقدی</span>
+          <span class="value">${fmt(s.loansReturnedTotal)}</span><span class="sub">AFN — ↑ ورود</span></div>
+        <div class="stat blue"><span class="label">تعداد معاملات</span>
+          <span class="value">${fmt(s.count)}</span></div>
+        <div class="stat green"><span class="label">مجموع لیتر فروخته‌شده</span>
+          <span class="value">${fmt(s.totalLiters)}</span><span class="sub">لیتر</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>⚡ دسترسی سریع</h2>
+      <div class="quick-grid">
+        <button class="quick-btn primary" onclick="navigate('sale')">
+          <span class="ico">💰</span><span>ثبت فروش</span></button>
+        <button class="quick-btn" onclick="navigate('debt-payment')">
+          <span class="ico">💵</span><span>دریافت پول نسیه</span></button>
+        <button class="quick-btn" onclick="navigate('loans')">
+          <span class="ico">🤝</span><span>قرض نقدی</span></button>
+        <button class="quick-btn" onclick="navigate('cash')">
+          <span class="ico">💼</span><span>صندوق</span></button>
+        <button class="quick-btn" onclick="navigate('customers')">
+          <span class="ico">👥</span><span>مشتریان</span></button>
+        <button class="quick-btn" onclick="navigate('products')">
+          <span class="ico">📦</span><span>محصولات</span></button>
+        <button class="quick-btn" onclick="navigate('daily-report')">
+          <span class="ico">📅</span><span>راپور امروز</span></button>
+        <button class="quick-btn" onclick="navigate('general-report')">
+          <span class="ico">📊</span><span>راپور عمومی</span></button>
+        <button class="quick-btn" onclick="closeDay()">
+          <span class="ico">🔒</span><span>بستن روز</span></button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📈 وضعیت کلی</h2>
+      <div class="dash-grid">
+        <div class="stat"><span class="label">تعداد مشتریان</span>
+          <span class="value">${fmt(state.customers.length)}</span></div>
+        <div class="stat red"><span class="label">مجموع بدهی مشتریان</span>
+          <span class="value">${fmt(state.customers.reduce((a,c)=>a+customerBalance(c.id),0))}</span>
+          <span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">مجموع قرض نقدی باقی‌مانده</span>
+          <span class="value">${fmt(state.loans.filter(l=>l.status!=='voided')
+            .reduce((a,l)=>a+loanRemaining(l.id),0))}</span>
+          <span class="sub">AFN (پول در گردش)</span></div>
+        <div class="stat"><span class="label">محصولات فعال</span>
+          <span class="value">${fmt(state.products.filter(p=>p.active).length)}</span></div>
+      </div>
+    </div>
+  `;
+}
+
+/* ==================================================================
+   SALE
+================================================================== */
+function renderSale() {
+  const today = todayISO();
+  const closed = isDayClosed(today);
+  const customers = [...state.customers].sort((a,b) =>
+    a.isWalkIn ? -1 : b.isWalkIn ? 1 : a.name.localeCompare(b.name, 'fa'));
+  const products = state.products.filter(p => p.active);
+
+  if (closed)
+    return `<div class="warning-banner">🔒 امروز بسته شده است.</div>`;
+
+  const todaySales = state.sales
+    .filter(s => s.date === today && s.status !== 'voided')
+    .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||''));
+
+  return `
+    <div class="card">
+      <h2>💰 ثبت فروش جدید</h2>
+      <div class="form-grid">
+        <div class="field"><label>تاریخ</label>
+          <input type="date" value="${today}" readonly></div>
+        <div class="field"><label>ساعت</label>
+          <input type="text" value="${nowTime()}" readonly></div>
+        <div class="field"><label>مشتری *</label>
+          <select id="saleCustomer" onchange="onCustomerChange()">
+            ${customers.map(c => `<option value="${c.id}" ${c.isWalkIn?'selected':''}>
+              ${esc(c.name)}${c.isWalkIn?'':' — بدهی: '+fmt(customerBalance(c.id))+' AFN'}
+            </option>`).join('')}
+          </select></div>
+        <div class="field"><label>محصول *</label>
+          <select id="saleProduct" onchange="onProductChange()">
+            ${products.map(p => `<option value="${p.id}" data-price="${p.price}">
+              ${esc(p.name)}</option>`).join('')}
+          </select></div>
+        <div class="field"><label>مقدار (لیتر) *</label>
+          <input type="number" id="saleLiters" step="0.01" min="0"
+                 inputmode="decimal" placeholder="0" oninput="updateSaleTotal()"></div>
+        <div class="field"><label>قیمت هر لیتر (AFN) *</label>
+          <input type="number" id="salePrice" step="0.01" min="0"
+                 inputmode="decimal" oninput="updateSaleTotal()"></div>
+        <div class="field"><label>مبلغ کل</label>
+          <div class="total-display" id="saleTotal">0 <span class="unit">AFN</span></div></div>
+        <div class="field"><label>نوع پرداخت</label>
+          <div class="radio-group" id="payTypeGroup">
+            <label class="checked" onclick="selectPayType('cash')">
+              <input type="radio" name="payType" value="cash" checked>
+              <span>💵 نقد (صندوق +)</span></label>
+            <label id="creditLabel" onclick="selectPayType('credit')">
+              <input type="radio" name="payType" value="credit">
+              <span>📝 نسیه (صندوق 0)</span></label>
+          </div></div>
+      </div>
+      <div class="summary-box" id="saleSummary"></div>
+      <button class="btn btn-primary btn-lg" onclick="submitSale()">✅ ثبت فروش</button>
+    </div>
+
+    <div class="card">
+      <h2>📋 فروش‌های امروز (${formatDate(today)})</h2>
+      ${renderSalesTable(todaySales, true)}
+    </div>
+  `;
+}
+
+function renderSalesTable(sales, showActions) {
+  if (!sales.length) return `<div class="empty-state">هیچ فروشی ثبت نشده.</div>`;
+  return `
+    <div class="table-wrap"><table><thead><tr>
+      <th>#</th><th>ساعت</th><th>مشتری</th><th>محصول</th>
+      <th>لیتر</th><th>قیمت</th><th>مبلغ کل</th><th>پرداخت</th>
+      ${showActions?'<th></th>':''}
+    </tr></thead><tbody>
+      ${sales.map(s => {
+        const c = state.customers.find(x=>x.id===s.customerId);
+        const p = state.products.find(x=>x.id===s.productId);
+        const v = s.status === 'voided';
+        return `<tr style="${v?'opacity:.55':''}">
+          <td class="num">${s.id}</td><td>${esc(s.time)}</td>
+          <td>${esc(c?c.name:'—')}</td><td>${esc(p?p.name:'—')}</td>
+          <td class="num">${fmt(s.liters)}</td>
+          <td class="num">${fmt(s.pricePerLiter)}</td>
+          <td class="num"><b>${fmt(s.total)}</b></td>
+          <td>${v ? '<span class="badge badge-voided">باطل</span>'
+              : s.paymentType==='cash'
+                ? '<span class="badge badge-cash">💵 نقد</span>'
+                : '<span class="badge badge-credit">📝 نسیه</span>'}</td>
+          ${showActions?`<td>${v?'':`<button class="btn btn-sm btn-ghost"
+            onclick="voidSale(${s.id})">✖</button>`}</td>`:''}
+        </tr>`;
+      }).join('')}
+    </tbody></table></div>`;
+}
+
+function onCustomerChange() {
+  const c = state.customers.find(x => x.id === Number($('#saleCustomer').value));
+  const lbl = $('#creditLabel');
+  const r = lbl.querySelector('input');
+  if (c?.isWalkIn) {
+    r.disabled = true; lbl.style.opacity = '.45';
+    lbl.style.pointerEvents = 'none';
+    if (r.checked) selectPayType('cash');
+  } else {
+    r.disabled = false; lbl.style.opacity = '1';
+    lbl.style.pointerEvents = 'auto';
+  }
+  updateSaleSummary();
+}
+
+function onProductChange() {
+  const sel = $('#saleProduct');
+  $('#salePrice').value = Number(sel.options[sel.selectedIndex].dataset.price) || 0;
+  updateSaleTotal();
+}
+function selectPayType(type) {
+  document.querySelectorAll('#payTypeGroup label').forEach(l => l.classList.remove('checked'));
+  const r = document.querySelector(`input[name="payType"][value="${type}"]`);
+  if (r.disabled) return;
+  r.checked = true; r.closest('label').classList.add('checked');
+  updateSaleSummary();
+}
+function getPayType() {
+  return document.querySelector('input[name="payType"]:checked')?.value || 'cash';
+}
+function updateSaleTotal() {
+  const l = parseFloat($('#saleLiters').value) || 0;
+  const p = parseFloat($('#salePrice').value) || 0;
+  $('#saleTotal').innerHTML = `${fmt(l*p)} <span class="unit">AFN</span>`;
+  updateSaleSummary();
+}
+function updateSaleSummary() {
+  const box = $('#saleSummary'); if (!box) return;
+  const cid = Number($('#saleCustomer').value);
+  const pid = Number($('#saleProduct').value);
+  const c = state.customers.find(x=>x.id===cid);
+  const p = state.products.find(x=>x.id===pid);
+  const l = parseFloat($('#saleLiters').value) || 0;
+  const pr = parseFloat($('#salePrice').value) || 0;
+  const total = l*pr;
+  const pay = getPayType();
+  if (!l) { box.innerHTML = '<div class="muted">خلاصه پس از وارد کردن مقدار نمایش داده می‌شود…</div>'; return; }
+  box.innerHTML = `
+    <div class="row"><span>مشتری:</span><b>${esc(c?c.name:'—')}</b></div>
+    <div class="row"><span>محصول:</span><b>${esc(p?p.name:'—')}</b></div>
+    <div class="row"><span>مقدار:</span><b>${fmt(l)} لیتر</b></div>
+    <div class="row"><span>قیمت:</span><b>${fmt(pr)} AFN</b></div>
+    <div class="row"><span>پرداخت:</span><b>${pay==='cash'?'💵 نقد (صندوق +)':'📝 نسیه (صندوق بدون تغییر)'}</b></div>
+    <div class="row total"><span>مبلغ کل:</span><span>${fmt(total)} AFN</span></div>`;
+}
+function submitSale() {
+  const today = todayISO();
+  if (isDayClosed(today)) { toast('امروز بسته شده است.', 'error'); return; }
+  const cid = Number($('#saleCustomer').value);
+  const pid = Number($('#saleProduct').value);
+  const l = parseFloat($('#saleLiters').value) || 0;
+  const pr = parseFloat($('#salePrice').value) || 0;
+  const pay = getPayType();
+  if (!l || l <= 0) { toast('مقدار لیتر الزامی است.', 'error'); return; }
+  if (!pr || pr <= 0) { toast('قیمت الزامی است.', 'error'); return; }
+  const c = state.customers.find(x=>x.id===cid);
+  if (c?.isWalkIn && pay === 'credit') { toast('Walk-in نسیه مجاز نیست.', 'error'); return; }
+
+  const total = l*pr;
+  const cashMsg = pay==='cash'
+    ? `💰 صندوق بعد: ${fmt(totalCashOnHand()+total)} AFN`
+    : `📝 به بدهی مشتری اضافه می‌شود`;
+  if (!confirm(
+    `مشتری: ${c?.name}\nمحصول: ${state.products.find(p=>p.id===pid)?.name}\n`+
+    `مقدار: ${fmt(l)} × ${fmt(pr)} = ${fmt(total)} AFN\n`+
+    `پرداخت: ${pay==='cash'?'نقد':'نسیه'}\n\n${cashMsg}\n\nتأیید؟`
+  )) return;
+
+  state.sales.push({
+    id: state.nextId.sale++, date: today, time: nowTime(), createdAt: nowISO(),
+    customerId: cid, productId: pid, liters: l, pricePerLiter: pr, total,
+    paymentType: pay, status: 'active'
+  });
+  log('ثبت فروش', `#${state.nextId.sale-1} | ${c?.name} | ${l}L × ${pr} = ${total} | ${pay}`);
+  save();
+  $('#saleLiters').value = ''; $('#salePrice').value = '';
+  $('#saleTotal').innerHTML = '0 <span class="unit">AFN</span>';
+  $('#saleSummary').innerHTML = '';
+  toast('✅ فروش ثبت شد.', 'success');
+  render();
+}
+function voidSale(id) {
+  const s = state.sales.find(x=>x.id===id); if (!s) return;
+  if (isDayClosed(s.date)) { toast('روز بسته است.', 'error'); return; }
+  const r = prompt('دلیل باطل کردن:'); if (r === null) return;
+  s.status = 'voided'; s.voidedAt = nowISO(); s.voidReason = r || '—';
+  log('باطل فروش', `#${id} | ${r}`);
+  save(); toast('باطل شد.', 'success'); render();
+}
+
+/* ==================================================================
+   CUSTOMERS
+================================================================== */
+function renderCustomers() {
+  const list = [...state.customers].sort((a,b) =>
+    a.isWalkIn ? -1 : b.isWalkIn ? 1 : a.name.localeCompare(b.name,'fa'));
+  return `
+    <div class="card">
+      <div class="row-between">
+        <h2>👥 مشتریان (${fmt(list.length)})</h2>
+        <button class="btn btn-primary" onclick="openCustomerForm()">➕ مشتری جدید</button>
+      </div>
+      <div class="search-box mb">
+        <input id="custSearch" placeholder="جستجو…" oninput="filterCustomers()">
+      </div>
+      <div id="custList">${renderCustomerRows(list)}</div>
+    </div>`;
+}
+function renderCustomerRows(list) {
+  if (!list.length) return `<div class="empty-state">یافت نشد.</div>`;
+  return `
+    <div class="table-wrap"><table><thead><tr>
+      <th>نام</th><th>تلفن</th><th>مجموع خرید</th><th>بدهی</th><th></th>
+    </tr></thead><tbody>
+      ${list.map(c => {
+        const bal = customerBalance(c.id), tot = customerTotalPurchases(c.id);
+        return `<tr>
+          <td><b>${esc(c.name)}</b>${c.isWalkIn?' <span class="badge badge-active">پیش‌فرض</span>':''}</td>
+          <td class="num">${esc(c.phone||'—')}</td>
+          <td class="num">${fmt(tot)}</td>
+          <td class="num ${bal>0?'neg':(bal<0?'pos':'')}">${fmt(bal)} <span class="unit">AFN</span></td>
+          <td class="text-left">
+            <button class="btn btn-sm btn-info" onclick="viewCustomer(${c.id})">پروفایل</button>
+            ${c.isWalkIn?'':`<button class="btn btn-sm btn-ghost" onclick="openCustomerForm(${c.id})">✏</button>`}
+          </td>
+        </tr>`;
+      }).join('')}
+    </tbody></table></div>`;
+}
+function filterCustomers() {
+  const q = $('#custSearch').value.trim().toLowerCase();
+  const f = state.customers.filter(c => c.isWalkIn || !q ||
+    c.name.toLowerCase().includes(q) || (c.phone||'').toLowerCase().includes(q));
+  $('#custList').innerHTML = renderCustomerRows(f);
+}
+function openCustomerForm(id) {
+  const c = id ? state.customers.find(x=>x.id===id) : null;
+  const walk = c?.isWalkIn;
+  showModal(c?'✏ ویرایش مشتری':'➕ مشتری جدید', `
+    <div class="form-grid">
+      <div class="field field-full"><label>نام *</label>
+        <input id="cfName" value="${esc(c?.name||'')}" ${walk?'readonly':''}></div>
+      <div class="field"><label>تلفن</label>
+        <input id="cfPhone" value="${esc(c?.phone||'')}" inputmode="tel"></div>
+      <div class="field"><label>آدرس</label>
+        <input id="cfAddress" value="${esc(c?.address||'')}"></div>
+      <div class="field field-full"><label>توضیحات</label>
+        <textarea id="cfNotes" rows="2">${esc(c?.notes||'')}</textarea></div>
+      ${!c?`<div class="field field-full">
+        <label>بدهی اولیه (AFN) — اگر از قبل بدهکار است</label>
+        <input type="number" id="cfInit" value="0" step="0.01" inputmode="decimal"></div>`:''}
+    </div>`,
+    `<button class="btn btn-ghost" onclick="closeModal()">انصراف</button>
+     <button class="btn btn-primary" onclick="saveCustomer(${id||'null'})">💾 ذخیره</button>`);
+}
+function saveCustomer(id) {
+  const name = $('#cfName').value.trim();
+  if (!name) { toast('نام الزامی است.', 'error'); return; }
+  if (id) {
+    const c = state.customers.find(x=>x.id===id); if (!c) return;
+    if (!c.isWalkIn) c.name = name;
+    c.phone = $('#cfPhone').value.trim();
+    c.address = $('#cfAddress').value.trim();
+    c.notes = $('#cfNotes').value.trim();
+    log('ویرایش مشتری', `#${id} ${name}`);
+  } else {
+    const newId = state.nextId.customer++;
+    state.customers.push({
+      id:newId, name, phone:$('#cfPhone').value.trim(),
+      address:$('#cfAddress').value.trim(), notes:$('#cfNotes').value.trim(),
+      isWalkIn:false, initialBalance: parseFloat($('#cfInit')?.value) || 0
+    });
+    log('افزودن مشتری', `#${newId} ${name}`);
+  }
+  save(); closeModal(); toast('✅ ذخیره شد.', 'success'); render();
+}
+function viewCustomer(id) {
+  const c = state.customers.find(x=>x.id===id); if (!c) return;
+  const sales = state.sales.filter(s => s.customerId===id && s.status!=='voided')
+    .sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time));
+  const pays = state.debtPayments.filter(p => p.customerId===id && p.status!=='voided')
+    .sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time));
+  const bal = customerBalance(id);
+  const totalPurch = sales.reduce((a,s)=>a+s.total,0);
+  const totalCredit = sales.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+  const totalPaid = pays.reduce((a,p)=>a+p.amount,0);
+  showModal(`👤 ${esc(c.name)}`, `
+    <div class="dash-grid mb">
+      <div class="stat"><span class="label">مجموع خرید</span>
+        <span class="value">${fmt(totalPurch)}</span><span class="sub">AFN</span></div>
+      <div class="stat red"><span class="label">نسیه</span>
+        <span class="value">${fmt(totalCredit)}</span><span class="sub">AFN</span></div>
+      <div class="stat green"><span class="label">پرداخت‌ها</span>
+        <span class="value">${fmt(totalPaid)}</span><span class="sub">AFN</span></div>
+      <div class="stat ${bal>0?'red':'green'}"><span class="label">باقی بدهی</span>
+        <span class="value">${fmt(bal)}</span><span class="sub">AFN</span></div>
+    </div>
+    <div class="muted">📞 ${esc(c.phone||'—')} | 📍 ${esc(c.address||'—')}
+      ${c.notes?'<br>📝 '+esc(c.notes):''}</div>
+    <h3 class="mt">🧾 خریدهای نسیه</h3>
+    ${sales.filter(s=>s.paymentType==='credit').length ? `
+      <div class="table-wrap"><table><thead><tr>
+        <th>تاریخ</th><th>محصول</th><th>لیتر</th><th>مبلغ</th>
+      </tr></thead><tbody>
+        ${sales.filter(s=>s.paymentType==='credit').map(s => {
+          const p = state.products.find(x=>x.id===s.productId);
+          return `<tr><td>${formatDate(s.date)} <span class="muted">${esc(s.time)}</span></td>
+            <td>${esc(p?p.name:'—')}</td><td class="num">${fmt(s.liters)}</td>
+            <td class="num neg">${fmt(s.total)}</td></tr>`;
+        }).join('')}
+      </tbody></table></div>` : '<div class="muted">ندارد.</div>'}
+    <h3 class="mt">💵 پرداخت‌ها</h3>
+    ${pays.length ? `
+      <div class="table-wrap"><table><thead><tr>
+        <th>تاریخ</th><th>ساعت</th><th>مبلغ</th></tr></thead><tbody>
+        ${pays.map(p => `<tr><td>${formatDate(p.date)}</td>
+          <td>${esc(p.time)}</td><td class="num pos">+ ${fmt(p.amount)}</td></tr>`).join('')}
+      </tbody></table></div>` : '<div class="muted">ندارد.</div>'}`,
+    `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
+}
+
+/* ==================================================================
+   PRODUCTS
+================================================================== */
+function renderProducts() {
+  return `
+    <div class="card">
+      <div class="row-between">
+        <h2>📦 محصولات (${fmt(state.products.length)})</h2>
+        <button class="btn btn-primary" onclick="openProductForm()">➕ جدید</button>
+      </div>
+      <div class="table-wrap"><table><thead><tr>
+        <th>#</th><th>نام</th><th>واحد</th><th>قیمت (AFN)</th><th>وضعیت</th><th></th>
+      </tr></thead><tbody>
+        ${state.products.map(p => `<tr>
+          <td class="num">${p.id}</td><td><b>${esc(p.name)}</b></td>
+          <td>${esc(p.unit)}</td><td class="num">${fmt(p.price)}</td>
+          <td>${p.active?'<span class="badge badge-active">فعال</span>':'<span class="badge badge-inactive">غیرفعال</span>'}</td>
+          <td class="text-left">
+            <button class="btn btn-sm btn-ghost" onclick="openProductForm(${p.id})">✏</button>
+            <button class="btn btn-sm ${p.active?'btn-warning':'btn-success'}" onclick="toggleProduct(${p.id})">
+              ${p.active?'غیرفعال':'فعال'}</button></td>
+        </tr>`).join('')}
+      </tbody></table></div>
+    </div>`;
+}
+function openProductForm(id) {
+  const p = id ? state.products.find(x=>x.id===id) : null;
+  showModal(p?'✏ ویرایش':'➕ محصول جدید', `
+    <div class="form-grid">
+      <div class="field field-full"><label>نام *</label>
+        <input id="pfName" value="${esc(p?.name||'')}"></div>
+      <div class="field"><label>واحد</label>
+        <input id="pfUnit" value="${esc(p?.unit||'لیتر')}" readonly></div>
+      <div class="field"><label>قیمت هر لیتر (AFN) *</label>
+        <input type="number" id="pfPrice" step="0.01" inputmode="decimal" value="${p?.price||0}"></div>
+      <div class="field"><label>وضعیت</label>
+        <select id="pfActive">
+          <option value="1" ${p?.active!==false?'selected':''}>فعال</option>
+          <option value="0" ${p?.active===false?'selected':''}>غیرفعال</option>
+        </select></div>
+    </div>`,
+    `<button class="btn btn-ghost" onclick="closeModal()">انصراف</button>
+     <button class="btn btn-primary" onclick="saveProduct(${id||'null'})">💾 ذخیره</button>`);
+}
+function saveProduct(id) {
+  const name = $('#pfName').value.trim();
+  const price = parseFloat($('#pfPrice').value) || 0;
+  const active = $('#pfActive').value === '1';
+  if (!name || price <= 0) { toast('نام و قیمت الزامی.', 'error'); return; }
+  if (id) {
+    const p = state.products.find(x=>x.id===id); if (!p) return;
+    Object.assign(p, { name, price, active });
+    log('ویرایش محصول', `#${id} ${name}`);
+  } else {
+    const newId = state.nextId.product++;
+    state.products.push({ id:newId, name, unit:'لیتر', price, active });
+    log('افزودن محصول', `#${newId} ${name}`);
+  }
+  save(); closeModal(); toast('✅ ذخیره شد.', 'success'); render();
+}
+function toggleProduct(id) {
+  const p = state.products.find(x=>x.id===id); if (!p) return;
+  p.active = !p.active;
+  log('تغییر وضعیت', `#${id} ${p.name} → ${p.active?'فعال':'غیرفعال'}`);
+  save(); render();
+}
+
+/* ==================================================================
+   DEBT PAYMENT  (increases cash!)
+================================================================== */
+function renderDebtPayment() {
+  const today = todayISO();
+  const closed = isDayClosed(today);
+  const debtors = state.customers
+    .filter(c => !c.isWalkIn && customerBalance(c.id) > 0)
+    .sort((a,b) => customerBalance(b.id)-customerBalance(a.id));
+  const recent = state.debtPayments.filter(p => p.status !== 'voided')
+    .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||''))
+    .slice(0, 20);
+
+  return `
+    ${closed ? `<div class="warning-banner">🔒 امروز بسته است.</div>` : ''}
+    <div class="card">
+      <h2>💵 دریافت پول نسیه</h2>
+      <div class="success-banner mb">
+        ✅ این مبلغ <b>به صندوق اضافه می‌شود</b> و بدهی مشتری را کاهش می‌دهد (فروش جدید محسوب نمی‌شود).
+      </div>
+      <div class="form-grid">
+        <div class="field field-full"><label>مشتری بدهکار *</label>
+          <select id="dpCustomer" onchange="updateDebtPaymentInfo()">
+            <option value="">— انتخاب —</option>
+            ${debtors.map(c => `<option value="${c.id}">
+              ${esc(c.name)} — بدهی: ${fmt(customerBalance(c.id))} AFN</option>`).join('')}
+          </select></div>
+        <div class="field"><label>مبلغ دریافتی (AFN) *</label>
+          <input type="number" id="dpAmount" step="0.01" min="0" inputmode="decimal"
+            placeholder="0" oninput="updateDebtPaymentInfo()"></div>
+        <div class="field"><label>تاریخ / ساعت</label>
+          <input value="${formatDate(today)} — ${nowTime()}" readonly></div>
+        <div class="field field-full"><label>توضیحات</label>
+          <input id="dpNotes" placeholder="اختیاری"></div>
+      </div>
+      <div class="summary-box" id="dpSummary"></div>
+      <button class="btn btn-success btn-lg" onclick="submitDebtPayment()" ${closed?'disabled':''}>
+        ✅ ثبت دریافت (صندوق +)
+      </button>
+    </div>
+    <div class="card">
+      <h2>📋 دریافت‌های اخیر</h2>
+      ${recent.length ? `
+        <div class="table-wrap"><table><thead><tr>
+          <th>#</th><th>تاریخ</th><th>مشتری</th><th>مبلغ</th><th>توضیح</th>
+        </tr></thead><tbody>
+          ${recent.map(p => {
+            const c = state.customers.find(x=>x.id===p.customerId);
+            return `<tr><td class="num">${p.id}</td>
+              <td>${formatDate(p.date)}</td>
+              <td>${esc(c?c.name:'—')}</td>
+              <td class="num pos">+ ${fmt(p.amount)}</td>
+              <td>${esc(p.notes||'—')}</td></tr>`;
+          }).join('')}
+        </tbody></table></div>` : '<div class="empty-state">دریافتی ثبت نشده.</div>'}
+    </div>`;
+}
+function updateDebtPaymentInfo() {
+  const box = $('#dpSummary');
+  const cid = Number($('#dpCustomer').value);
+  const amt = parseFloat($('#dpAmount').value) || 0;
+  const c = state.customers.find(x=>x.id===cid);
+  if (!c) { box.innerHTML = ''; return; }
+  const bal = customerBalance(cid);
+  box.innerHTML = `
+    <div class="row"><span>مشتری:</span><b>${esc(c.name)}</b></div>
+    <div class="row"><span>بدهی فعلی:</span><b>${fmt(bal)} AFN</b></div>
+    <div class="row"><span>مبلغ دریافتی:</span><b>${fmt(amt)} AFN</b></div>
+    <div class="row total"><span>بدهی بعد:</span><span>${fmt(bal-amt)} AFN</span></div>
+    <div class="row" style="color:#166534"><span>صندوق بعد از ثبت:</span>
+      <b>+${fmt(amt)} AFN</b></div>`;
+}
+function submitDebtPayment() {
+  const today = todayISO();
+  if (isDayClosed(today)) { toast('روز بسته است.', 'error'); return; }
+  const cid = Number($('#dpCustomer').value);
+  const amt = parseFloat($('#dpAmount').value) || 0;
+  if (!cid || amt <= 0) { toast('اطلاعات کامل نیست.', 'error'); return; }
+  const c = state.customers.find(x=>x.id===cid);
+  if (!confirm(`دریافت ${fmt(amt)} AFN از ${c.name}؟\n\n💰 صندوق: +${fmt(amt)} AFN\nبدهی مشتری: ${fmt(customerBalance(cid))} → ${fmt(customerBalance(cid)-amt)}`)) return;
+  state.debtPayments.push({
+    id: state.nextId.debtPayment++, date: today, time: nowTime(),
+    createdAt: nowISO(), customerId: cid, amount: amt,
+    notes: $('#dpNotes').value.trim(), status: 'active'
+  });
+  log('دریافت پول نسیه', `#${state.nextId.debtPayment-1} | ${c.name} | ${amt} AFN`);
+  save(); toast('✅ دریافت ثبت شد — صندوق افزایش یافت.', 'success'); render();
+}
+
+/* ==================================================================
+   LOANS  (given = cash OUT, returned = cash IN)
+================================================================== */
+function renderLoans() {
+  const today = todayISO();
+  const closed = isDayClosed(today);
+  const loans = [...state.loans].filter(l => l.status !== 'voided')
+    .sort((a,b) => (b.date||'').localeCompare(a.date||''));
+  const totalGiven = loans.reduce((a,l) => a + l.amount, 0);
+  const totalReturned = loans.reduce((a,l) => a + loanPaid(l.id), 0);
+
+  return `
+    ${closed ? `<div class="warning-banner">🔒 امروز بسته است.</div>` : ''}
+    <div class="dash-grid mb">
+      <div class="stat orange"><span class="label">مجموع قرض داده‌شده</span>
+        <span class="value">${fmt(totalGiven)}</span><span class="sub">AFN — از صندوق ↓</span></div>
+      <div class="stat green"><span class="label">مجموع برگشت‌شده</span>
+        <span class="value">${fmt(totalReturned)}</span><span class="sub">AFN — به صندوق ↑</span></div>
+      <div class="stat red"><span class="label">باقی قرض (در گردش)</span>
+        <span class="value">${fmt(totalGiven-totalReturned)}</span><span class="sub">AFN</span></div>
+    </div>
+    <div class="card">
+      <div class="row-between">
+        <h2>🤝 قرض نقدی</h2>
+        <button class="btn btn-primary" onclick="openLoanForm()" ${closed?'disabled':''}>
+          ➕ قرض جدید (کاهش صندوق)
+        </button>
+      </div>
+      <div class="info-banner mb">
+        ℹ️ وقتی قرض می‌دهید، صندوق کاهش می‌یابد. وقتی برگشت می‌گیرید، صندوق افزایش می‌یابد.
+      </div>
+      ${loans.length ? `
+        <div class="table-wrap"><table><thead><tr>
+          <th>#</th><th>نام</th><th>تلفن</th><th>مبلغ</th>
+          <th>برگشت</th><th>باقی</th><th>وضعیت</th><th>تاریخ</th><th></th>
+        </tr></thead><tbody>
+          ${loans.map(l => {
+            const paid = loanPaid(l.id), rem = l.amount - paid;
+            const st = loanStatus(l.id);
+            const b = { unpaid:'<span class="badge badge-danger">پرداخت نشده</span>',
+                       partial:'<span class="badge badge-warning">قسمتی</span>',
+                       paid:'<span class="badge badge-success">کامل</span>' }[st];
+            return `<tr>
+              <td class="num">${l.id}</td>
+              <td><b>${esc(l.personName)}</b></td>
+              <td class="num">${esc(l.phone||'—')}</td>
+              <td class="num">${fmt(l.amount)}</td>
+              <td class="num pos">${fmt(paid)}</td>
+              <td class="num neg">${fmt(rem)}</td>
+              <td>${b}</td>
+              <td>${formatDate(l.date)}</td>
+              <td class="text-left">
+                ${rem>0?`<button class="btn btn-sm btn-success" onclick="openLoanPaymentForm(${l.id})">💵 برگشت</button>`:''}
+                <button class="btn btn-sm btn-ghost" onclick="viewLoan(${l.id})">جزئیات</button>
+              </td></tr>`;
+          }).join('')}
+        </tbody></table></div>` : '<div class="empty-state">قرضی ثبت نشده.</div>'}
+    </div>`;
+}
+function openLoanForm() {
+  showModal('➕ قرض نقدی جدید (از صندوق کم می‌شود)', `
+    <div class="form-grid">
+      <div class="field"><label>نام شخص *</label><input id="lfName"></div>
+      <div class="field"><label>تلفن</label><input id="lfPhone" inputmode="tel"></div>
+      <div class="field"><label>مبلغ قرض (AFN) *</label>
+        <input type="number" id="lfAmount" step="0.01" inputmode="decimal"></div>
+      <div class="field"><label>تاریخ</label>
+        <input type="date" id="lfDate" value="${todayISO()}"></div>
+      <div class="field field-full"><label>توضیحات</label>
+        <textarea id="lfNotes" rows="2"></textarea></div>
+    </div>`,
+    `<button class="btn btn-ghost" onclick="closeModal()">انصراف</button>
+     <button class="btn btn-primary" onclick="saveLoan()">💾 ثبت</button>`);
+}
+function saveLoan() {
+  const name = $('#lfName').value.trim();
+  const amt = parseFloat($('#lfAmount').value) || 0;
+  const date = $('#lfDate').value || todayISO();
+  if (!name || amt <= 0) { toast('نام و مبلغ الزامی.', 'error'); return; }
+  if (isDayClosed(date)) { toast('روز بسته است.', 'error'); return; }
+  if (!confirm(`قرض ${fmt(amt)} AFN به ${name}؟\n\n💼 صندوق: -${fmt(amt)} AFN\nصندوق بعد: ${fmt(totalCashOnHand()-amt)} AFN`)) return;
+  const id = state.nextId.loan++;
+  state.loans.push({
+    id, personName:name, phone:$('#lfPhone').value.trim(),
+    amount:amt, date, notes:$('#lfNotes').value.trim(),
+    createdAt:nowISO(), status:'active'
+  });
+  log('ثبت قرض نقدی', `#${id} | ${name} | ${amt} AFN | صندوق -`);
+  save(); closeModal(); toast('✅ قرض ثبت شد — صندوق کاهش یافت.', 'success'); render();
+}
+function openLoanPaymentForm(lid) {
+  const l = state.loans.find(x=>x.id===lid); if (!l) return;
+  const rem = loanRemaining(lid);
+  showModal(`💵 برگشت قرض — ${esc(l.personName)} (صندوق +)`, `
+    <div class="info-banner mb">باقی: <b>${fmt(rem)} AFN</b></div>
+    <div class="form-grid">
+      <div class="field"><label>مبلغ برگشتی (AFN) *</label>
+        <input type="number" id="lpAmount" step="0.01" min="0" max="${rem}" inputmode="decimal"></div>
+      <div class="field"><label>تاریخ</label>
+        <input type="date" id="lpDate" value="${todayISO()}"></div>
+      <div class="field field-full"><label>توضیحات</label>
+        <input id="lpNotes"></div>
+    </div>`,
+    `<button class="btn btn-ghost" onclick="closeModal()">انصراف</button>
+     <button class="btn btn-success" onclick="saveLoanPayment(${lid})">💾 ثبت (صندوق +)</button>`);
+}
+function saveLoanPayment(lid) {
+  const amt = parseFloat($('#lpAmount').value) || 0;
+  const date = $('#lpDate').value || todayISO();
+  const rem = loanRemaining(lid);
+  if (amt <= 0 || amt > rem + 0.001) { toast('مبلغ نامعتبر.', 'error'); return; }
+  if (isDayClosed(date)) { toast('روز بسته است.', 'error'); return; }
+  const id = state.nextId.loanPayment++;
+  state.loanPayments.push({
+    id, loanId:lid, amount:amt, date, time:nowTime(),
+    createdAt:nowISO(), notes:$('#lpNotes').value.trim(), status:'active'
+  });
+  log('برگشت قرض', `#${id} | قرض#${lid} | ${amt} AFN | صندوق +`);
+  save(); closeModal(); toast('✅ برگشت ثبت شد — صندوق افزایش یافت.', 'success'); render();
+}
+function viewLoan(lid) {
+  const l = state.loans.find(x=>x.id===lid); if (!l) return;
+  const pays = state.loanPayments.filter(p => p.loanId===lid && p.status!=='voided')
+    .sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time));
+  const paid = loanPaid(lid), rem = l.amount-paid;
+  showModal(`📋 ${esc(l.personName)}`, `
+    <div class="dash-grid mb">
+      <div class="stat"><span class="label">قرض</span>
+        <span class="value">${fmt(l.amount)}</span></div>
+      <div class="stat green"><span class="label">برگشت</span>
+        <span class="value">${fmt(paid)}</span></div>
+      <div class="stat red"><span class="label">باقی</span>
+        <span class="value">${fmt(rem)}</span></div>
+    </div>
+    <div class="muted">📞 ${esc(l.phone||'—')} | 📅 ${formatDate(l.date)}
+      ${l.notes?'<br>📝 '+esc(l.notes):''}</div>
+    <h3 class="mt">برگشت‌ها</h3>
+    ${pays.length?`<div class="table-wrap"><table><thead><tr>
+      <th>تاریخ</th><th>مبلغ</th><th>توضیح</th></tr></thead><tbody>
+      ${pays.map(p => `<tr><td>${formatDate(p.date)} ${esc(p.time)}</td>
+        <td class="num pos">+ ${fmt(p.amount)}</td>
+        <td>${esc(p.notes||'—')}</td></tr>`).join('')}
+    </tbody></table></div>`:'<div class="muted">ندارد.</div>'}`,
+    `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
+}
+
+/* ==================================================================
+   CASH PAGE  ★★★
+================================================================== */
+let cashFilter = { from: todayISO(), to: todayISO() };
+
+function renderCash() {
+  const f = cashFilter;
+  const cs = cashSummary(f.from || null, f.to || null);
+
+  // Detailed list of all cash movements in the period
+  const movements = [];
+  state.sales.filter(s => s.status!=='voided' && s.paymentType==='cash')
+    .filter(s => (!f.from||s.date>=f.from) && (!f.to||s.date<=f.to))
+    .forEach(s => {
+      const c = state.customers.find(x=>x.id===s.customerId);
+      movements.push({ date:s.date, time:s.time, type:'in', amount:s.total,
+        label:`فروش نقدی — ${c?.name||''}`, ref:`#${s.id}` });
+    });
+  state.debtPayments.filter(p => p.status!=='voided')
+    .filter(p => (!f.from||p.date>=f.from) && (!f.to||p.date<=f.to))
+    .forEach(p => {
+      const c = state.customers.find(x=>x.id===p.customerId);
+      movements.push({ date:p.date, time:p.time, type:'in', amount:p.amount,
+        label:`دریافت بدهی — ${c?.name||''}`, ref:`#${p.id}` });
+    });
+  state.loanPayments.filter(p => p.status!=='voided')
+    .filter(p => (!f.from||p.date>=f.from) && (!f.to||p.date<=f.to))
+    .forEach(p => {
+      const l = state.loans.find(x=>x.id===p.loanId);
+      movements.push({ date:p.date, time:p.time, type:'in', amount:p.amount,
+        label:`برگشت قرض — ${l?.personName||''}`, ref:`#${p.id}` });
+    });
+  state.loans.filter(l => l.status!=='voided')
+    .filter(l => (!f.from||l.date>=f.from) && (!f.to||l.date<=f.to))
+    .forEach(l => {
+      movements.push({ date:l.date, time:'', type:'out', amount:l.amount,
+        label:`قرض نقدی — ${l.personName}`, ref:`#${l.id}` });
+    });
+  state.cashAdjustments.filter(a => a.status!=='voided')
+    .filter(a => (!f.from||a.date>=f.from) && (!f.to||a.date<=f.to))
+    .forEach(a => {
+      movements.push({ date:a.date, time:a.time, type:a.type==='in'?'in':'out',
+        amount:a.amount, label:`${a.type==='in'?'افزایش':'کاهش'} دستی — ${a.notes||''}`,
+        ref:`#${a.id}` });
+    });
+  movements.sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time));
+
+  return `
+    <div class="card">
+      <h2>💼 صندوق / جریان نقدی</h2>
+      <div class="dash-grid">
+        <div class="stat cash"><span class="label">💰 موجودی صندوق (همه)</span>
+          <span class="value">${fmt(totalCashOnHand())}</span><span class="sub">AFN</span></div>
+        <div class="stat green"><span class="label">↑ کل ورودی بازه</span>
+          <span class="value">${fmt(cs.totalIn)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">↓ کل خروجی بازه</span>
+          <span class="value">${fmt(cs.totalOut)}</span><span class="sub">AFN</span></div>
+        <div class="stat ${cs.net>=0?'green':'red'}"><span class="label">خالص بازه</span>
+          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span><span class="sub">AFN</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📊 تفکیک ورودی/خروجی بازه</h2>
+      <div class="table-wrap"><table><thead><tr>
+        <th>منبع</th><th>نوع</th><th>مبلغ (AFN)</th>
+      </tr></thead><tbody>
+        <tr><td>فروش نقدی</td>
+          <td><span class="badge badge-cash">ورود ↑</span></td>
+          <td class="num pos">+${fmt(cs.cashSales)}</td></tr>
+        <tr><td>دریافت پول نسیه از مشتریان</td>
+          <td><span class="badge badge-cash">ورود ↑</span></td>
+          <td class="num pos">+${fmt(cs.debtPaid)}</td></tr>
+        <tr><td>برگشت قرض نقدی</td>
+          <td><span class="badge badge-cash">ورود ↑</span></td>
+          <td class="num pos">+${fmt(cs.loanReturn)}</td></tr>
+        ${cs.adjustments>0?`<tr><td>افزایش دستی</td>
+          <td><span class="badge badge-cash">ورود ↑</span></td>
+          <td class="num pos">+${fmt(cs.adjustments)}</td></tr>`:''}
+        <tr><td>قرض نقدی داده‌شده</td>
+          <td><span class="badge badge-credit">خروج ↓</span></td>
+          <td class="num neg">-${fmt(cs.loansOut)}</td></tr>
+        ${cs.adjustments<0?`<tr><td>کاهش دستی</td>
+          <td><span class="badge badge-credit">خروج ↓</span></td>
+          <td class="num neg">${fmt(cs.adjustments)}</td></tr>`:''}
+        <tr style="background:#f0fdfa;font-weight:800">
+          <td colspan="2">خالص بازه</td>
+          <td class="num ${cs.net>=0?'pos':'neg'}">${cs.net>=0?'+':''}${fmt(cs.net)}</td></tr>
+      </tbody></table></div>
+    </div>
+
+    <div class="card">
+      <h2>➕ / ➖ تنظیم دستی صندوق</h2>
+      <div class="muted mb">برای ثبت موجودی اولیه، هزینه‌ها یا اصلاحات دستی</div>
+      <div class="form-grid">
+        <div class="field"><label>نوع</label>
+          <select id="adjType">
+            <option value="in">افزایش (ورود نقدی)</option>
+            <option value="out">کاهش (خروج نقدی / هزینه)</option>
+          </select></div>
+        <div class="field"><label>مبلغ (AFN)</label>
+          <input type="number" id="adjAmount" step="0.01" inputmode="decimal"></div>
+        <div class="field field-full"><label>توضیحات</label>
+          <input id="adjNotes" placeholder="مثلاً: موجودی اولیه / کرایه / ترمیم"></div>
+      </div>
+      <button class="btn btn-primary mt" onclick="submitAdjustment()">💾 ثبت</button>
+    </div>
+
+    <div class="card">
+      <h2>🔍 فیلتر بازه</h2>
+      <div class="form-grid">
+        <div class="field"><label>از تاریخ</label>
+          <input type="date" value="${f.from}" onchange="cashFilter.from=this.value;render()"></div>
+        <div class="field"><label>تا تاریخ</label>
+          <input type="date" value="${f.to}" onchange="cashFilter.to=this.value;render()"></div>
+        <div class="field"><label>&nbsp;</label>
+          <button class="btn btn-ghost" onclick="cashFilter={from:'',to:''};render()">
+            نمایش همه</button></div>
+        <div class="field"><label>&nbsp;</label>
+          <button class="btn btn-ghost" onclick="cashFilter={from:todayISO(),to:todayISO()};render()">
+            امروز</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📋 تمام حرکات صندوق (${movements.length})</h2>
+      ${movements.length ? `
+        <div class="table-wrap"><table><thead><tr>
+          <th>تاریخ</th><th>ساعت</th><th>شرح</th>
+          <th>ورود (+)</th><th>خروج (−)</th>
+        </tr></thead><tbody>
+          ${movements.map(m => `<tr>
+            <td>${formatDate(m.date)}</td>
+            <td>${esc(m.time||'—')}</td>
+            <td>${esc(m.label)} <span class="muted">${esc(m.ref)}</span></td>
+            <td class="num ${m.type==='in'?'pos':''}">${m.type==='in'?'+'+fmt(m.amount):''}</td>
+            <td class="num ${m.type==='out'?'neg':''}">${m.type==='out'?'-'+fmt(m.amount):''}</td>
+          </tr>`).join('')}
+        </tbody></table></div>` : '<div class="empty-state">حرکتی یافت نشد.</div>'}
+    </div>
+  `;
+}
+function submitAdjustment() {
+  const type = $('#adjType').value;
+  const amt = parseFloat($('#adjAmount').value) || 0;
+  const notes = $('#adjNotes').value.trim();
+  if (amt <= 0) { toast('مبلغ نامعتبر.', 'error'); return; }
+  const id = state.nextId.adj++;
+  state.cashAdjustments.push({
+    id, date: todayISO(), time: nowTime(), type, amount: amt, notes,
+    createdAt: nowISO(), status: 'active'
+  });
+  log('تنظیم صندوق', `#${id} | ${type==='in'?'+':'-'}${amt} | ${notes}`);
+  save();
+  toast(`✅ ${type==='in'?'افزایش':'کاهش'} صندوق ثبت شد.`, 'success');
+  render();
+}
+
+/* ==================================================================
+   CLOSE DAY
+================================================================== */
+function closeDay() {
+  const today = todayISO();
+  if (isDayClosed(today)) { toast('قبلاً بسته شده.', 'error'); return; }
+  const s = daySummary(today);
+  const cs = cashSummary(today, today);
+  if (!confirm(
+    `بستن روز ${formatDate(today)}؟\n\n`+
+    `معاملات: ${s.count}\nلیتر: ${fmt(s.totalLiters)}\n`+
+    `فروش: ${fmt(s.totalSales)} AFN\nنقد: ${fmt(s.cashSales)}\nنسیه: ${fmt(s.creditSales)}\n\n`+
+    `💰 ورودی نقدی: ${fmt(cs.totalIn)}\n💸 خروجی نقدی: ${fmt(cs.totalOut)}\n`+
+    `خالص: ${fmt(cs.net)} AFN\n\n`+
+    `بعد از بستن، امکان ثبت معامله جدید برای این روز وجود ندارد.`
+  )) return;
+  state.closedDays[today] = { closedAt: nowISO() };
+  log('بستن روز', `${today} | فروش: ${s.totalSales} | صندوق خالص: ${cs.net}`);
+  save(); toast('🔒 روز بسته شد.', 'success'); navigate('daily-report');
+}
+function reopenDay(date) {
+  if (!isDayClosed(date)) return;
+  if (!confirm(`باز کردن روز ${formatDate(date)}؟ (در لاگ ثبت می‌شود)`)) return;
+  delete state.closedDays[date];
+  log('باز کردن روز', `${date}`);
+  save(); toast('🔓 باز شد.', 'success'); render();
+}
+
+/* ==================================================================
+   DAILY REPORT
+================================================================== */
+let dailyReportDate = todayISO();
+function renderDailyReport() {
+  const date = dailyReportDate;
+  const s = daySummary(date);
+  const cs = cashSummary(date, date);
+  const closed = isDayClosed(date);
+  const prodRows = Object.entries(s.byProduct).map(([pid, v]) => {
+    const p = state.products.find(x=>x.id===Number(pid));
+    return `<tr><td>${esc(p?p.name:'—')}</td>
+      <td class="num">${fmt(v.liters)} لیتر</td>
+      <td class="num">${fmt(v.total)} AFN</td></tr>`;
+  }).join('');
+
+  return `
+    <div class="card">
+      <div class="row-between">
+        <h2>📅 راپور روزانه</h2>
+        ${closed ? '<span class="badge badge-closed">🔒 بسته</span>'
+                 : '<span class="badge badge-open">🔓 باز</span>'}
+      </div>
+      <div class="form-grid">
+        <div class="field"><label>تاریخ</label>
+          <input type="date" value="${date}" onchange="dailyReportDate=this.value;render()"></div>
+        <div class="field"><label>&nbsp;</label>
+          ${closed
+            ? `<button class="btn btn-warning" onclick="reopenDay('${date}')">🔓 باز کردن</button>`
+            : `<button class="btn btn-warning" onclick="closeDay()">🔒 بستن</button>`}</div>
+      </div>
+      <div class="muted">شمسی: <b>${formatDate(date)}</b></div>
+    </div>
+
+    <div class="card">
+      <h2>💰 جریان نقدی این روز</h2>
+      <div class="dash-grid">
+        <div class="stat green"><span class="label">↑ ورودی نقدی</span>
+          <span class="value">${fmt(cs.totalIn)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">↓ خروجی نقدی</span>
+          <span class="value">${fmt(cs.totalOut)}</span><span class="sub">AFN</span></div>
+        <div class="stat ${cs.net>=0?'green':'red'}"><span class="label">خالص</span>
+          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span><span class="sub">AFN</span></div>
+        <div class="stat cash"><span class="label">💰 صندوق بعد از این روز</span>
+          <span class="value">${fmt(cashSummary(null, date).net)}</span><span class="sub">AFN</span></div>
+      </div>
+      <div class="table-wrap mt"><table><thead><tr>
+        <th>جزئیات</th><th>مبلغ (AFN)</th>
+      </tr></thead><tbody>
+        <tr><td>فروش نقدی</td><td class="num pos">+${fmt(cs.cashSales)}</td></tr>
+        <tr><td>دریافت بدهی مشتریان</td><td class="num pos">+${fmt(cs.debtPaid)}</td></tr>
+        <tr><td>برگشت قرض نقدی</td><td class="num pos">+${fmt(cs.loanReturn)}</td></tr>
+        <tr><td>قرض نقدی داده‌شده</td><td class="num neg">-${fmt(cs.loansOut)}</td></tr>
+      </tbody></table></div>
+    </div>
+
+    <div class="card">
+      <h2>📊 خلاصه فروش</h2>
+      <div class="dash-grid">
+        <div class="stat blue"><span class="label">تعداد</span>
+          <span class="value">${fmt(s.count)}</span></div>
+        <div class="stat green"><span class="label">لیتر فروخته‌شده</span>
+          <span class="value">${fmt(s.totalLiters)}</span></div>
+        <div class="stat green"><span class="label">مجموع فروش</span>
+          <span class="value">${fmt(s.totalSales)}</span></div>
+        <div class="stat blue"><span class="label">نقد</span>
+          <span class="value">${fmt(s.cashSales)}</span></div>
+        <div class="stat red"><span class="label">نسیه</span>
+          <span class="value">${fmt(s.creditSales)}</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📦 فروش هر محصول</h2>
+      ${prodRows ? `<div class="table-wrap"><table><thead><tr>
+        <th>محصول</th><th>مقدار</th><th>مبلغ</th>
+      </tr></thead><tbody>${prodRows}</tbody></table></div>`
+      : '<div class="empty-state">فروشی نداشت.</div>'}
+    </div>
+
+    <div class="card">
+      <h2>🧾 معاملات</h2>
+      ${renderSalesTable(s.salesList, !closed)}
+    </div>
+
+    <div class="card">
+      <h2>💵 دریافت از بدهکاران</h2>
+      ${s.debtPaymentsList.length ? `<div class="table-wrap"><table><thead><tr>
+        <th>ساعت</th><th>مشتری</th><th>مبلغ</th>
+      </tr></thead><tbody>
+        ${s.debtPaymentsList.map(p => {
+          const c = state.customers.find(x=>x.id===p.customerId);
+          return `<tr><td>${esc(p.time)}</td><td>${esc(c?c.name:'—')}</td>
+            <td class="num pos">+${fmt(p.amount)}</td></tr>`;
+        }).join('')}
+      </tbody></table></div>` : '<div class="empty-state">ندارد.</div>'}
+    </div>
+
+    <div class="card">
+      <h2>🤝 قرض نقدی</h2>
+      ${s.loansGivenList.length ? `<div class="table-wrap"><table><thead><tr>
+        <th>نام</th><th>مبلغ (خروج)</th>
+      </tr></thead><tbody>
+        ${s.loansGivenList.map(l => `<tr><td>${esc(l.personName)}</td>
+          <td class="num neg">-${fmt(l.amount)}</td></tr>`).join('')}
+      </tbody></table></div>` : '<div class="empty-state">قرضی داده نشده.</div>'}
+      ${s.loanPaymentsList.length ? `
+        <h3 class="mt">برگشت قرض (ورود)</h3>
+        <div class="table-wrap"><table><thead><tr>
+          <th>نام</th><th>مبلغ</th>
+        </tr></thead><tbody>
+          ${s.loanPaymentsList.map(p => {
+            const l = state.loans.find(x=>x.id===p.loanId);
+            return `<tr><td>${esc(l?l.personName:'—')}</td>
+              <td class="num pos">+${fmt(p.amount)}</td></tr>`;
+          }).join('')}
+        </tbody></table></div>` : ''}
+    </div>`;
+}
+
+/* ==================================================================
+   GENERAL REPORT
+================================================================== */
+let genFilters = { from:'', to:'', customerId:'', productId:'', paymentType:'' };
+function renderGeneralReport() {
+  const f = genFilters;
+  let sales = state.sales.filter(s => s.status !== 'voided');
+  if (f.from) sales = sales.filter(s => s.date >= f.from);
+  if (f.to) sales = sales.filter(s => s.date <= f.to);
+  if (f.customerId) sales = sales.filter(s => s.customerId === Number(f.customerId));
+  if (f.productId) sales = sales.filter(s => s.productId === Number(f.productId));
+  if (f.paymentType) sales = sales.filter(s => s.paymentType === f.paymentType);
+
+  const total = sales.reduce((a,s)=>a+s.total,0);
+  const cash = sales.filter(s=>s.paymentType==='cash').reduce((a,s)=>a+s.total,0);
+  const credit = sales.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+  const liters = sales.reduce((a,s)=>a+s.liters,0);
+  const cs = cashSummary(f.from||null, f.to||null);
+
+  const byProduct = {};
+  for (const s of sales) {
+    if (!byProduct[s.productId]) byProduct[s.productId] = { liters:0, total:0 };
+    byProduct[s.productId].liters += s.liters;
+    byProduct[s.productId].total += s.total;
+  }
+
+  const custRows = state.customers.filter(c => !c.isWalkIn).map(c => {
+    const cs2 = sales.filter(s => s.customerId === c.id);
+    const cc = cs2.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
+    const cp = cs2.reduce((a,s)=>a+s.total,0);
+    let pays = state.debtPayments.filter(p => p.status!=='voided' && p.customerId===c.id);
+    if (f.from) pays = pays.filter(p => p.date >= f.from);
+    if (f.to) pays = pays.filter(p => p.date <= f.to);
+    const paid = pays.reduce((a,p)=>a+p.amount,0);
+    return { c, cp, cc, paid, bal: customerBalance(c.id) };
+  }).filter(r => !f.customerId || r.c.id === Number(f.customerId));
+
+  let loans = state.loans.filter(l => l.status !== 'voided');
+  if (f.from) loans = loans.filter(l => l.date >= f.from);
+  if (f.to) loans = loans.filter(l => l.date <= f.to);
+
+  return `
+    <div class="card">
+      <h2>📊 راپور عمومی</h2>
+      <div class="form-grid">
+        <div class="field"><label>از تاریخ</label>
+          <input type="date" value="${f.from}" onchange="genFilters.from=this.value;render()"></div>
+        <div class="field"><label>تا تاریخ</label>
+          <input type="date" value="${f.to}" onchange="genFilters.to=this.value;render()"></div>
+        <div class="field"><label>مشتری</label>
+          <select onchange="genFilters.customerId=this.value;render()">
+            <option value="">— همه —</option>
+            ${state.customers.map(c => `<option value="${c.id}" ${f.customerId==c.id?'selected':''}>${esc(c.name)}</option>`).join('')}
+          </select></div>
+        <div class="field"><label>محصول</label>
+          <select onchange="genFilters.productId=this.value;render()">
+            <option value="">— همه —</option>
+            ${state.products.map(p => `<option value="${p.id}" ${f.productId==p.id?'selected':''}>${esc(p.name)}</option>`).join('')}
+          </select></div>
+        <div class="field"><label>نوع پرداخت</label>
+          <select onchange="genFilters.paymentType=this.value;render()">
+            <option value="">— همه —</option>
+            <option value="cash" ${f.paymentType==='cash'?'selected':''}>نقد</option>
+            <option value="credit" ${f.paymentType==='credit'?'selected':''}>نسیه</option>
+          </select></div>
+        <div class="field"><label>&nbsp;</label>
+          <button class="btn btn-ghost" onclick="genFilters={from:'',to:'',customerId:'',productId:'',paymentType:''};render()">🗑 پاک کردن</button></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📈 خلاصه فروش</h2>
+      <div class="dash-grid">
+        <div class="stat green"><span class="label">مجموع فروش</span>
+          <span class="value">${fmt(total)}</span><span class="sub">AFN</span></div>
+        <div class="stat blue"><span class="label">نقد</span>
+          <span class="value">${fmt(cash)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">نسیه</span>
+          <span class="value">${fmt(credit)}</span><span class="sub">AFN</span></div>
+        <div class="stat"><span class="label">مجموع لیتر</span>
+          <span class="value">${fmt(liters)}</span><span class="sub">لیتر</span></div>
+        <div class="stat blue"><span class="label">معاملات</span>
+          <span class="value">${fmt(sales.length)}</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>💰 جریان نقدی بازه</h2>
+      <div class="dash-grid">
+        <div class="stat green"><span class="label">↑ ورودی کل</span>
+          <span class="value">${fmt(cs.totalIn)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">↓ خروجی کل</span>
+          <span class="value">${fmt(cs.totalOut)}</span><span class="sub">AFN</span></div>
+        <div class="stat ${cs.net>=0?'green':'red'}"><span class="label">خالص</span>
+          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span><span class="sub">AFN</span></div>
+        <div class="stat cash"><span class="label">💰 صندوق فعلی</span>
+          <span class="value">${fmt(totalCashOnHand())}</span><span class="sub">AFN</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📦 فروش هر محصول</h2>
+      ${Object.keys(byProduct).length ? `<div class="table-wrap"><table><thead><tr>
+        <th>محصول</th><th>مقدار (لیتر)</th><th>مبلغ (AFN)</th>
+      </tr></thead><tbody>
+        ${Object.entries(byProduct).map(([pid, v]) => {
+          const p = state.products.find(x=>x.id===Number(pid));
+          return `<tr><td>${esc(p?p.name:'—')}</td>
+            <td class="num">${fmt(v.liters)}</td>
+            <td class="num">${fmt(v.total)}</td></tr>`;
+        }).join('')}
+      </tbody></table></div>` : '<div class="empty-state">داده نیست.</div>'}
+    </div>
+
+    <div class="card">
+      <h2>👥 وضعیت مشتریان</h2>
+      ${custRows.length ? `<div class="table-wrap"><table><thead><tr>
+        <th>مشتری</th><th>مجموع خرید</th><th>نسیه</th>
+        <th>پرداخت در بازه</th><th>باقی بدهی</th>
+      </tr></thead><tbody>
+        ${custRows.map(r => `<tr>
+          <td><b>${esc(r.c.name)}</b></td>
+          <td class="num">${fmt(r.cp)}</td>
+          <td class="num neg">${fmt(r.cc)}</td>
+          <td class="num pos">${fmt(r.paid)}</td>
+          <td class="num ${r.bal>0?'neg':'pos'}"><b>${fmt(r.bal)}</b></td>
+        </tr>`).join('')}
+      </tbody></table></div>` : '<div class="empty-state">داده نیست.</div>'}
+    </div>
+
+    <div class="card">
+      <h2>🤝 قرض نقدی</h2>
+      ${loans.length ? `<div class="table-wrap"><table><thead><tr>
+        <th>نام</th><th>مبلغ</th><th>برگشت</th><th>باقی</th>
+      </tr></thead><tbody>
+        ${loans.map(l => {
+          const paid = loanPaid(l.id);
+          return `<tr><td><b>${esc(l.personName)}</b></td>
+            <td class="num">${fmt(l.amount)}</td>
+            <td class="num pos">${fmt(paid)}</td>
+            <td class="num neg">${fmt(l.amount-paid)}</td></tr>`;
+        }).join('')}
+      </tbody></table></div>` : '<div class="empty-state">داده نیست.</div>'}
+    </div>
+  `;
+}
+
+/* ==================================================================
+   LOGS
+================================================================== */
+function renderLogs() {
+  const logs = [...state.logs].sort((a,b) =>
+    (b.timestamp||'').localeCompare(a.timestamp||''));
+  return `
+    <div class="card">
+      <div class="row-between">
+        <h2>📋 لاگ (${fmt(logs.length)})</h2>
+        <div class="flex">
+          <button class="btn btn-info btn-sm" onclick="exportData()">📥 پشتیبان‌گیری</button>
+          <button class="btn btn-ghost btn-sm" onclick="importData()">📤 بازیابی</button>
+          <button class="btn btn-ghost btn-sm" onclick="if(confirm('پاک کردن لاگ؟')){state.logs=[];save();render();}">🗑 لاگ</button>
+        </div>
+      </div>
+      ${logs.length ? `<div class="table-wrap"><table><thead><tr>
+        <th>#</th><th>زمان</th><th>عملیات</th><th>جزئیات</th>
+      </tr></thead><tbody>
+        ${logs.map(l => `<tr><td class="num">${l.id}</td>
+          <td>${formatDateTime(l.timestamp)}</td>
+          <td><span class="badge badge-open">${esc(l.action)}</span></td>
+          <td>${esc(l.details)}</td></tr>`).join('')}
+      </tbody></table></div>` : '<div class="empty-state">خالی.</div>'}
+    </div>`;
+}
+
+/* ==================================================================
+   BACKUP / RESTORE
+================================================================== */
+function exportData() {
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `till-backup-${todayISO()}.json`;
+  a.click();
+  toast('📥 فایل پشتیبان ذخیره شد.', 'success');
+}
+function importData() {
+  const inp = document.createElement('input');
+  inp.type = 'file'; inp.accept = '.json,application/json';
+  inp.onchange = e => {
+    const file = e.target.files[0]; if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if (!data.customers || !data.sales) throw new Error('فرمت نامعتبر');
+        if (!confirm('تمام اطلاعات فعلی جایگزین می‌شود. ادامه؟')) return;
+        state = data;
+        save(); toast('✅ بازیابی شد.', 'success'); render();
+      } catch (err) { toast('خطا در فایل.', 'error'); }
+    };
+    reader.readAsText(file);
+  };
+  inp.click();
+}
+
+/* ==================================================================
+   MODAL
+================================================================== */
+function showModal(title, body, footer) {
+  $('#modalRoot').innerHTML = `
+    <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>${title}</h3>
+          <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <div class="modal-body">${body}</div>
+        <div class="modal-footer">${footer||''}</div>
+      </div>
+    </div>`;
+}
+function closeModal() { $('#modalRoot').innerHTML = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+/* ==================================================================
+   PWA INSTALL
+================================================================== */
+let deferredPrompt = null;
+const installBtn = document.getElementById('pwaInstallBtn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); deferredPrompt = e;
+  installBtn.style.display = 'flex';
+});
+
+window.installPWA = async function() {
+  if (!deferredPrompt) {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    alert(isIOS
+      ? '📱 برای نصب روی iPhone:\n\n1. این صفحه را در Safari باز کنید\n2. دکمه Share (□↑) را بزنید\n3. Add to Home Screen را انتخاب کنید\n4. Add را بزنید'
+      : '📱 برای نصب:\n\nمنوی مرورگر → Install app / Add to Home screen');
+    return;
+  }
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  console.log('Install:', outcome);
+  deferredPrompt = null;
+  installBtn.style.display = 'none';
+};
+
+window.addEventListener('appinstalled', () => {
+  installBtn.style.display = 'none';
+});
+
+// Show button on iOS if not already installed
+const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                  || window.navigator.standalone === true;
+if (isIOS && !isStandalone) {
+  installBtn.style.display = 'flex';
+}
+
+/* ==================================================================
+   BOOT
+================================================================== */
+render();
+console.log('✅ App loaded — data stored offline in LocalStorage');
+</script>
+</body>
+</html>
