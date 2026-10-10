@@ -5,19 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>حسابداری تیل‌فروشی</title>
 
-<!-- ========== PWA META ========== -->
 <meta name="theme-color" content="#0d7377">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="تیل‌فروشی">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="description" content="سیستم حسابداری و مدیریت فروش تیل‌فروشی — کاملاً آفلاین">
+<meta name="description" content="سیستم حسابداری تیل‌فروشی — کاملاً آفلاین">
 
-<!-- Inline Icon (SVG data URI) -->
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==">
 
-<!-- Inline Manifest -->
 <link rel="manifest" href='data:application/manifest+json,{"name":"حسابداری تیل‌فروشی","short_name":"تیل‌فروشی","start_url":"./","scope":"./","display":"standalone","orientation":"portrait","background_color":"%230d7377","theme_color":"%230d7377","lang":"fa","dir":"rtl","icons":[{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"192x192","type":"image/svg+xml","purpose":"any maskable"},{"src":"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjgwIiBmaWxsPSIjMGQ3Mzc3Ii8+PHRleHQgeD0iMjU2IiB5PSIzNjAiIGZvbnQtc2l6ZT0iMjgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+4pu9PC90ZXh0Pjwvc3ZnPg==","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}]}'>
 
 <style>
@@ -35,7 +32,6 @@ body{font-family:Tahoma,'Segoe UI',system-ui,sans-serif;background:var(--bg);
 button{font-family:inherit;cursor:pointer;border:none}
 input,select,textarea{font-family:inherit;font-size:16px}
 .unit{font-size:.8em;color:var(--muted);font-weight:normal}
-
 .app{max-width:1300px;margin:0 auto;padding:12px}
 .header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));
   color:#fff;padding:14px 18px;border-radius:var(--radius);display:flex;
@@ -51,7 +47,6 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .cash-badge .cash-val{font-size:16px;font-weight:800;display:block;
   font-variant-numeric:tabular-nums}
 .cash-badge .cash-lbl{opacity:.9}
-
 .nav{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0;background:var(--card);
   padding:6px;border-radius:var(--radius);box-shadow:var(--shadow)}
 .nav button{background:transparent;color:var(--text);padding:9px 12px;
@@ -59,16 +54,13 @@ input,select,textarea{font-family:inherit;font-size:16px}
   display:flex;align-items:center;gap:5px;white-space:nowrap}
 .nav button:hover{background:#f1f5f9}
 .nav button.active{background:var(--primary);color:#fff}
-
 .content{display:flex;flex-direction:column;gap:12px}
-
 .card{background:var(--card);border-radius:var(--radius);padding:16px;
   box-shadow:var(--shadow)}
 .card h2{font-size:16px;margin-bottom:12px;color:var(--primary-dark);
   display:flex;align-items:center;gap:8px;padding-bottom:8px;
   border-bottom:1px solid var(--border)}
 .card h3{font-size:14px;margin:10px 0 8px;color:var(--primary-dark)}
-
 .btn{padding:10px 14px;border-radius:8px;font-size:14px;font-weight:600;
   transition:.15s;display:inline-flex;align-items:center;gap:6px;
   justify-content:center;min-height:42px}
@@ -84,7 +76,6 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .btn-lg{padding:16px 20px;font-size:16px;width:100%}
 .btn-sm{padding:6px 10px;font-size:12px;min-height:32px}
 .btn:disabled{opacity:.5;cursor:not-allowed}
-
 .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:12px}
 .field{display:flex;flex-direction:column;gap:5px}
@@ -95,12 +86,10 @@ input,select,textarea{font-family:inherit;font-size:16px}
   outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(13,115,119,.1)}
 .field input[readonly]{background:#f8fafc;color:var(--muted)}
 .field-full{grid-column:1/-1}
-
 .total-display{font-size:20px;font-weight:800;color:var(--primary-dark);
   background:#f0fdfa;padding:10px 14px;border-radius:8px;
   border:2px dashed var(--primary-light);text-align:center;
   font-variant-numeric:tabular-nums}
-
 .radio-group{display:flex;gap:8px}
 .radio-group label{flex:1;padding:10px;border:2px solid var(--border);
   border-radius:8px;cursor:pointer;text-align:center;font-weight:600;
@@ -108,13 +97,11 @@ input,select,textarea{font-family:inherit;font-size:16px}
 .radio-group label.checked{border-color:var(--primary);background:#f0fdfa;
   color:var(--primary-dark)}
 .radio-group input{display:none}
-
 .summary-box{background:#f8fafc;border:1px solid var(--border);
   border-radius:8px;padding:12px;margin:12px 0;font-size:13px}
 .summary-box .row{display:flex;justify-content:space-between;padding:3px 0}
 .summary-box .row.total{border-top:1px solid var(--border);margin-top:5px;
   padding-top:7px;font-size:15px;font-weight:800;color:var(--primary-dark)}
-
 .table-wrap{overflow-x:auto;border-radius:8px;border:1px solid var(--border);
   -webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:12px;background:#fff;
@@ -132,7 +119,6 @@ tr:hover td{background:#f8fafc}
 .neg{color:var(--danger)}
 .empty-state{padding:30px 20px;text-align:center;color:var(--muted);
   font-size:13px}
-
 .badge{display:inline-block;padding:3px 9px;border-radius:20px;
   font-size:10px;font-weight:700}
 .badge-cash{background:#dcfce7;color:#166534}
@@ -145,7 +131,6 @@ tr:hover td{background:#f8fafc}
 .badge-warning{background:#ffedd5;color:#9a3412}
 .badge-success{background:#dcfce7;color:#166534}
 .badge-danger{background:#fee2e2;color:#991b1b}
-
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
   gap:10px}
 .stat{background:var(--card);border-radius:var(--radius);padding:14px;
@@ -160,7 +145,6 @@ tr:hover td{background:#f8fafc}
 .stat .value{font-size:20px;font-weight:800;color:var(--text);
   font-variant-numeric:tabular-nums}
 .stat .sub{font-size:10px;color:var(--muted)}
-
 .quick-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
   gap:10px}
 .quick-btn{padding:16px 10px;border-radius:12px;background:#fff;
@@ -170,7 +154,6 @@ tr:hover td{background:#f8fafc}
 .quick-btn:hover{border-color:var(--primary);transform:translateY(-2px)}
 .quick-btn .ico{font-size:24px}
 .quick-btn.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.55);
   display:flex;align-items:center;justify-content:center;padding:12px;
   z-index:1000;animation:fadeIn .15s}
@@ -192,7 +175,6 @@ tr:hover td{background:#f8fafc}
 .modal-footer{padding:12px 16px;border-top:1px solid var(--border);
   display:flex;gap:8px;justify-content:flex-end;position:sticky;bottom:0;
   background:#fff}
-
 .row-between{display:flex;justify-content:space-between;align-items:center;
   gap:10px;flex-wrap:wrap}
 .flex{display:flex;gap:8px;flex-wrap:wrap}
@@ -207,7 +189,6 @@ tr:hover td{background:#f8fafc}
   border-radius:8px;border-right:4px solid var(--info);font-size:13px}
 .success-banner{background:#dcfce7;color:#166534;padding:12px 16px;
   border-radius:8px;border-right:4px solid var(--success);font-size:13px}
-
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
   background:#0f172a;color:#fff;padding:12px 22px;border-radius:10px;
   font-size:13px;font-weight:600;z-index:2000;
@@ -215,17 +196,14 @@ tr:hover td{background:#f8fafc}
   max-width:90vw;text-align:center}
 .toast.success{background:var(--success)}
 .toast.error{background:var(--danger)}
-
 .search-box{position:relative}
 .search-box input{padding-right:34px}
 .search-box::before{content:"🔍";position:absolute;right:10px;top:50%;
   transform:translateY(-50%);font-size:13px;opacity:.6}
-
 #pwaInstallBtn{position:fixed;bottom:16px;left:16px;z-index:999;
   background:var(--primary);color:#fff;padding:11px 18px;
   border-radius:50px;font-size:13px;font-weight:700;display:none;
   align-items:center;gap:6px;box-shadow:0 6px 20px rgba(13,115,119,.4)}
-
 @media (max-width:640px){
   .app{padding:8px}
   .header{padding:12px}
@@ -264,6 +242,17 @@ tr:hover td{background:#f8fafc}
 
 <script>
 /* ==================================================================
+   REGISTER SERVICE WORKER — for offline mode
+================================================================== */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js', { scope: './' })
+      .then(reg => console.log('✅ Service Worker registered:', reg.scope))
+      .catch(err => console.warn('⚠️ SW error:', err));
+  });
+}
+
+/* ==================================================================
    STATE / STORAGE
 ================================================================== */
 const STORAGE_KEY = 'till_accounting_v2';
@@ -283,7 +272,7 @@ function defaultState() {
     debtPayments: [],
     loans: [],
     loanPayments: [],
-    cashAdjustments: [],   // manual cash in/out
+    cashAdjustments: [],
     closedDays: {},
     logs: [],
     nextId: { customer:2, product:4, sale:1, debtPayment:1, loan:1,
@@ -302,9 +291,6 @@ try {
 
 function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 
-/* ==================================================================
-   HELPERS
-================================================================== */
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({
   '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
@@ -354,7 +340,6 @@ function formatDateTime(iso) {
   const time = `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
   return `${formatDate(date)} – ${time}`;
 }
-
 function toast(msg, type='') {
   const el = document.createElement('div');
   el.className = 'toast ' + type;
@@ -368,52 +353,36 @@ function log(action, details) {
 }
 function isDayClosed(date) { return !!state.closedDays[date]; }
 
-/* ==================================================================
-   CASH FLOW  ★★★  (CORE NEW FEATURE)  ★★★
-   Every cash movement increases/decreases صندوق
-================================================================== */
-
-// Cash inflow from sales (CASH sales only — credit sales don't affect cash)
 function cashFromSales(from, to) {
   return state.sales
     .filter(s => s.status !== 'voided' && s.paymentType === 'cash')
     .filter(s => (!from || s.date >= from) && (!to || s.date <= to))
     .reduce((a,s) => a + s.total, 0);
 }
-
-// Cash received from customers paying off their credit (this is a CASH INFLOW)
 function cashFromDebtPayments(from, to) {
   return state.debtPayments
     .filter(p => p.status !== 'voided')
     .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
     .reduce((a,p) => a + p.amount, 0);
 }
-
-// Cash received from personal loan returns (this is a CASH INFLOW)
 function cashFromLoanReturns(from, to) {
   return state.loanPayments
     .filter(p => p.status !== 'voided')
     .filter(p => (!from || p.date >= from) && (!to || p.date <= to))
     .reduce((a,p) => a + p.amount, 0);
 }
-
-// Cash OUT: personal loans given away (money leaves the till)
 function cashOutLoans(from, to) {
   return state.loans
     .filter(l => l.status !== 'voided')
     .filter(l => (!from || l.date >= from) && (!to || l.date <= to))
     .reduce((a,l) => a + l.amount, 0);
 }
-
-// Manual cash adjustments (opening balance, expenses, etc.)
 function cashFromAdjustments(from, to) {
   return state.cashAdjustments
     .filter(a => a.status !== 'voided')
     .filter(a => (!from || a.date >= from) && (!to || a.date <= to))
     .reduce((a,x) => a + (x.type === 'in' ? x.amount : -x.amount), 0);
 }
-
-// Full cash summary for a period
 function cashSummary(from, to) {
   const cashSales   = cashFromSales(from, to);
   const debtPaid    = cashFromDebtPayments(from, to);
@@ -427,15 +396,8 @@ function cashSummary(from, to) {
     totalIn, totalOut, net: totalIn - totalOut
   };
 }
+function totalCashOnHand() { return cashSummary(null, null).net; }
 
-// Total cash on hand (all time)
-function totalCashOnHand() {
-  return cashSummary(null, null).net;
-}
-
-/* ==================================================================
-   CUSTOMER & LOAN CALCULATIONS
-================================================================== */
 function customerBalance(cid) {
   const credit = state.sales
     .filter(s => s.customerId === cid && s.paymentType === 'credit'
@@ -471,16 +433,11 @@ function loanStatus(lid) {
   if (paid >= l.amount) return 'paid';
   return 'partial';
 }
-
-/* ==================================================================
-   DAY SUMMARY
-================================================================== */
 function daySummary(date) {
   const sales = state.sales.filter(s => s.date === date && s.status !== 'voided');
   const debtPayments = state.debtPayments.filter(p => p.date === date && p.status !== 'voided');
   const loansGiven = state.loans.filter(l => l.date === date && l.status !== 'voided');
   const loanPaymentsList = state.loanPayments.filter(p => p.date === date && p.status !== 'voided');
-
   const totalLiters = sales.reduce((a,s) => a + s.liters, 0);
   const totalSales = sales.reduce((a,s) => a + s.total, 0);
   const cashSales = sales.filter(s => s.paymentType === 'cash')
@@ -490,19 +447,15 @@ function daySummary(date) {
   const debtCollected = debtPayments.reduce((a,p) => a + p.amount, 0);
   const loansGivenTotal = loansGiven.reduce((a,l) => a + l.amount, 0);
   const loansReturnedTotal = loanPaymentsList.reduce((a,p) => a + p.amount, 0);
-
-  // Cash movement of the day
   const cashIn = cashSales + debtCollected + loansReturnedTotal;
   const cashOut = loansGivenTotal;
   const netCash = cashIn - cashOut;
-
   const byProduct = {};
   for (const s of sales) {
     if (!byProduct[s.productId]) byProduct[s.productId] = { liters:0, total:0 };
     byProduct[s.productId].liters += s.liters;
     byProduct[s.productId].total += s.total;
   }
-
   return {
     date, count: sales.length, totalLiters, totalSales, cashSales, creditSales,
     debtCollected, loansGivenTotal, loansReturnedTotal,
@@ -512,9 +465,6 @@ function daySummary(date) {
   };
 }
 
-/* ==================================================================
-   NAV / RENDER
-================================================================== */
 let currentPage = 'dashboard';
 const NAV_ITEMS = [
   { id:'dashboard',      icon:'🏠', label:'داشبورد' },
@@ -530,14 +480,12 @@ const NAV_ITEMS = [
 ];
 
 function navigate(page) { currentPage = page; render(); window.scrollTo({top:0,behavior:'smooth'}); }
-
 function renderNav() {
   $('#nav').innerHTML = NAV_ITEMS.map(i =>
     `<button class="${currentPage===i.id?'active':''}" onclick="navigate('${i.id}')">
       <span>${i.icon}</span><span>${i.label}</span></button>`
   ).join('');
 }
-
 function render() {
   $('#todayDate').textContent = `امروز: ${formatDate(todayISO())}` +
     (isDayClosed(todayISO()) ? ' 🔒' : '');
@@ -553,44 +501,27 @@ function render() {
   $('#content').innerHTML = (pages[currentPage] || renderDashboard)();
 }
 
-/* ==================================================================
-   DASHBOARD
-================================================================== */
 function renderDashboard() {
   const today = todayISO();
   const s = daySummary(today);
   const cs = cashSummary(today, today);
   const closed = isDayClosed(today);
-
   return `
     ${closed ? `<div class="warning-banner">🔒 امروز (${formatDate(today)}) بسته شده است.</div>` : ''}
-
     <div class="card">
       <h2>💼 وضعیت صندوق (نقدی موجود)</h2>
       <div class="dash-grid">
-        <div class="stat cash">
-          <span class="label">💰 صندوق فعلی</span>
+        <div class="stat cash"><span class="label">💰 صندوق فعلی</span>
           <span class="value">${fmt(totalCashOnHand())}</span>
-          <span class="sub">AFN — موجودی کل</span>
-        </div>
-        <div class="stat green">
-          <span class="label">↑ ورودی نقدی امروز</span>
-          <span class="value">${fmt(cs.totalIn)}</span>
-          <span class="sub">AFN</span>
-        </div>
-        <div class="stat red">
-          <span class="label">↓ خروجی نقدی امروز</span>
-          <span class="value">${fmt(cs.totalOut)}</span>
-          <span class="sub">AFN</span>
-        </div>
-        <div class="stat ${cs.net>=0?'green':'red'}">
-          <span class="label">خالص امروز</span>
-          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span>
-          <span class="sub">AFN</span>
-        </div>
+          <span class="sub">AFN — موجودی کل</span></div>
+        <div class="stat green"><span class="label">↑ ورودی نقدی امروز</span>
+          <span class="value">${fmt(cs.totalIn)}</span><span class="sub">AFN</span></div>
+        <div class="stat red"><span class="label">↓ خروجی نقدی امروز</span>
+          <span class="value">${fmt(cs.totalOut)}</span><span class="sub">AFN</span></div>
+        <div class="stat ${cs.net>=0?'green':'red'}"><span class="label">خالص امروز</span>
+          <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span><span class="sub">AFN</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📊 خلاصه امروز — ${formatDate(today)}</h2>
       <div class="dash-grid">
@@ -613,7 +544,6 @@ function renderDashboard() {
           <span class="value">${fmt(s.totalLiters)}</span><span class="sub">لیتر</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>⚡ دسترسی سریع</h2>
       <div class="quick-grid">
@@ -637,7 +567,6 @@ function renderDashboard() {
           <span class="ico">🔒</span><span>بستن روز</span></button>
       </div>
     </div>
-
     <div class="card">
       <h2>📈 وضعیت کلی</h2>
       <div class="dash-grid">
@@ -657,23 +586,16 @@ function renderDashboard() {
   `;
 }
 
-/* ==================================================================
-   SALE
-================================================================== */
 function renderSale() {
   const today = todayISO();
   const closed = isDayClosed(today);
   const customers = [...state.customers].sort((a,b) =>
     a.isWalkIn ? -1 : b.isWalkIn ? 1 : a.name.localeCompare(b.name, 'fa'));
   const products = state.products.filter(p => p.active);
-
-  if (closed)
-    return `<div class="warning-banner">🔒 امروز بسته شده است.</div>`;
-
+  if (closed) return `<div class="warning-banner">🔒 امروز بسته شده است.</div>`;
   const todaySales = state.sales
     .filter(s => s.date === today && s.status !== 'voided')
     .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||''));
-
   return `
     <div class="card">
       <h2>💰 ثبت فروش جدید</h2>
@@ -714,14 +636,12 @@ function renderSale() {
       <div class="summary-box" id="saleSummary"></div>
       <button class="btn btn-primary btn-lg" onclick="submitSale()">✅ ثبت فروش</button>
     </div>
-
     <div class="card">
       <h2>📋 فروش‌های امروز (${formatDate(today)})</h2>
       ${renderSalesTable(todaySales, true)}
     </div>
   `;
 }
-
 function renderSalesTable(sales, showActions) {
   if (!sales.length) return `<div class="empty-state">هیچ فروشی ثبت نشده.</div>`;
   return `
@@ -750,7 +670,6 @@ function renderSalesTable(sales, showActions) {
       }).join('')}
     </tbody></table></div>`;
 }
-
 function onCustomerChange() {
   const c = state.customers.find(x => x.id === Number($('#saleCustomer').value));
   const lbl = $('#creditLabel');
@@ -765,7 +684,6 @@ function onCustomerChange() {
   }
   updateSaleSummary();
 }
-
 function onProductChange() {
   const sel = $('#saleProduct');
   $('#salePrice').value = Number(sel.options[sel.selectedIndex].dataset.price) || 0;
@@ -818,7 +736,6 @@ function submitSale() {
   if (!pr || pr <= 0) { toast('قیمت الزامی است.', 'error'); return; }
   const c = state.customers.find(x=>x.id===cid);
   if (c?.isWalkIn && pay === 'credit') { toast('Walk-in نسیه مجاز نیست.', 'error'); return; }
-
   const total = l*pr;
   const cashMsg = pay==='cash'
     ? `💰 صندوق بعد: ${fmt(totalCashOnHand()+total)} AFN`
@@ -828,7 +745,6 @@ function submitSale() {
     `مقدار: ${fmt(l)} × ${fmt(pr)} = ${fmt(total)} AFN\n`+
     `پرداخت: ${pay==='cash'?'نقد':'نسیه'}\n\n${cashMsg}\n\nتأیید؟`
   )) return;
-
   state.sales.push({
     id: state.nextId.sale++, date: today, time: nowTime(), createdAt: nowISO(),
     customerId: cid, productId: pid, liters: l, pricePerLiter: pr, total,
@@ -851,9 +767,6 @@ function voidSale(id) {
   save(); toast('باطل شد.', 'success'); render();
 }
 
-/* ==================================================================
-   CUSTOMERS
-================================================================== */
 function renderCustomers() {
   const list = [...state.customers].sort((a,b) =>
     a.isWalkIn ? -1 : b.isWalkIn ? 1 : a.name.localeCompare(b.name,'fa'));
@@ -982,9 +895,6 @@ function viewCustomer(id) {
     `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
 }
 
-/* ==================================================================
-   PRODUCTS
-================================================================== */
 function renderProducts() {
   return `
     <div class="card">
@@ -1049,9 +959,6 @@ function toggleProduct(id) {
   save(); render();
 }
 
-/* ==================================================================
-   DEBT PAYMENT  (increases cash!)
-================================================================== */
 function renderDebtPayment() {
   const today = todayISO();
   const closed = isDayClosed(today);
@@ -1061,13 +968,12 @@ function renderDebtPayment() {
   const recent = state.debtPayments.filter(p => p.status !== 'voided')
     .sort((a,b) => (b.createdAt||'').localeCompare(a.createdAt||''))
     .slice(0, 20);
-
   return `
     ${closed ? `<div class="warning-banner">🔒 امروز بسته است.</div>` : ''}
     <div class="card">
       <h2>💵 دریافت پول نسیه</h2>
       <div class="success-banner mb">
-        ✅ این مبلغ <b>به صندوق اضافه می‌شود</b> و بدهی مشتری را کاهش می‌دهد (فروش جدید محسوب نمی‌شود).
+        ✅ این مبلغ <b>به صندوق اضافه می‌شود</b> و بدهی مشتری را کاهش می‌دهد.
       </div>
       <div class="form-grid">
         <div class="field field-full"><label>مشتری بدهکار *</label>
@@ -1118,7 +1024,7 @@ function updateDebtPaymentInfo() {
     <div class="row"><span>بدهی فعلی:</span><b>${fmt(bal)} AFN</b></div>
     <div class="row"><span>مبلغ دریافتی:</span><b>${fmt(amt)} AFN</b></div>
     <div class="row total"><span>بدهی بعد:</span><span>${fmt(bal-amt)} AFN</span></div>
-    <div class="row" style="color:#166534"><span>صندوق بعد از ثبت:</span>
+    <div class="row" style="color:#166534"><span>صندوق بعد:</span>
       <b>+${fmt(amt)} AFN</b></div>`;
 }
 function submitDebtPayment() {
@@ -1128,7 +1034,7 @@ function submitDebtPayment() {
   const amt = parseFloat($('#dpAmount').value) || 0;
   if (!cid || amt <= 0) { toast('اطلاعات کامل نیست.', 'error'); return; }
   const c = state.customers.find(x=>x.id===cid);
-  if (!confirm(`دریافت ${fmt(amt)} AFN از ${c.name}؟\n\n💰 صندوق: +${fmt(amt)} AFN\nبدهی مشتری: ${fmt(customerBalance(cid))} → ${fmt(customerBalance(cid)-amt)}`)) return;
+  if (!confirm(`دریافت ${fmt(amt)} AFN از ${c.name}؟\n\n💰 صندوق: +${fmt(amt)}\nبدهی: ${fmt(customerBalance(cid))} → ${fmt(customerBalance(cid)-amt)}`)) return;
   state.debtPayments.push({
     id: state.nextId.debtPayment++, date: today, time: nowTime(),
     createdAt: nowISO(), customerId: cid, amount: amt,
@@ -1138,9 +1044,6 @@ function submitDebtPayment() {
   save(); toast('✅ دریافت ثبت شد — صندوق افزایش یافت.', 'success'); render();
 }
 
-/* ==================================================================
-   LOANS  (given = cash OUT, returned = cash IN)
-================================================================== */
 function renderLoans() {
   const today = todayISO();
   const closed = isDayClosed(today);
@@ -1148,7 +1051,6 @@ function renderLoans() {
     .sort((a,b) => (b.date||'').localeCompare(a.date||''));
   const totalGiven = loans.reduce((a,l) => a + l.amount, 0);
   const totalReturned = loans.reduce((a,l) => a + loanPaid(l.id), 0);
-
   return `
     ${closed ? `<div class="warning-banner">🔒 امروز بسته است.</div>` : ''}
     <div class="dash-grid mb">
@@ -1218,7 +1120,7 @@ function saveLoan() {
   const date = $('#lfDate').value || todayISO();
   if (!name || amt <= 0) { toast('نام و مبلغ الزامی.', 'error'); return; }
   if (isDayClosed(date)) { toast('روز بسته است.', 'error'); return; }
-  if (!confirm(`قرض ${fmt(amt)} AFN به ${name}؟\n\n💼 صندوق: -${fmt(amt)} AFN\nصندوق بعد: ${fmt(totalCashOnHand()-amt)} AFN`)) return;
+  if (!confirm(`قرض ${fmt(amt)} AFN به ${name}؟\n\n💼 صندوق: -${fmt(amt)}\nصندوق بعد: ${fmt(totalCashOnHand()-amt)}`)) return;
   const id = state.nextId.loan++;
   state.loans.push({
     id, personName:name, phone:$('#lfPhone').value.trim(),
@@ -1284,16 +1186,10 @@ function viewLoan(lid) {
     `<button class="btn btn-ghost" onclick="closeModal()">بستن</button>`);
 }
 
-/* ==================================================================
-   CASH PAGE  ★★★
-================================================================== */
 let cashFilter = { from: todayISO(), to: todayISO() };
-
 function renderCash() {
   const f = cashFilter;
   const cs = cashSummary(f.from || null, f.to || null);
-
-  // Detailed list of all cash movements in the period
   const movements = [];
   state.sales.filter(s => s.status!=='voided' && s.paymentType==='cash')
     .filter(s => (!f.from||s.date>=f.from) && (!f.to||s.date<=f.to))
@@ -1330,7 +1226,6 @@ function renderCash() {
         ref:`#${a.id}` });
     });
   movements.sort((a,b) => (b.date+b.time).localeCompare(a.date+a.time));
-
   return `
     <div class="card">
       <h2>💼 صندوق / جریان نقدی</h2>
@@ -1345,7 +1240,6 @@ function renderCash() {
           <span class="value">${cs.net>=0?'+':''}${fmt(cs.net)}</span><span class="sub">AFN</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📊 تفکیک ورودی/خروجی بازه</h2>
       <div class="table-wrap"><table><thead><tr>
@@ -1374,7 +1268,6 @@ function renderCash() {
           <td class="num ${cs.net>=0?'pos':'neg'}">${cs.net>=0?'+':''}${fmt(cs.net)}</td></tr>
       </tbody></table></div>
     </div>
-
     <div class="card">
       <h2>➕ / ➖ تنظیم دستی صندوق</h2>
       <div class="muted mb">برای ثبت موجودی اولیه، هزینه‌ها یا اصلاحات دستی</div>
@@ -1391,7 +1284,6 @@ function renderCash() {
       </div>
       <button class="btn btn-primary mt" onclick="submitAdjustment()">💾 ثبت</button>
     </div>
-
     <div class="card">
       <h2>🔍 فیلتر بازه</h2>
       <div class="form-grid">
@@ -1400,14 +1292,11 @@ function renderCash() {
         <div class="field"><label>تا تاریخ</label>
           <input type="date" value="${f.to}" onchange="cashFilter.to=this.value;render()"></div>
         <div class="field"><label>&nbsp;</label>
-          <button class="btn btn-ghost" onclick="cashFilter={from:'',to:''};render()">
-            نمایش همه</button></div>
+          <button class="btn btn-ghost" onclick="cashFilter={from:'',to:''};render()">نمایش همه</button></div>
         <div class="field"><label>&nbsp;</label>
-          <button class="btn btn-ghost" onclick="cashFilter={from:todayISO(),to:todayISO()};render()">
-            امروز</button></div>
+          <button class="btn btn-ghost" onclick="cashFilter={from:todayISO(),to:todayISO()};render()">امروز</button></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📋 تمام حرکات صندوق (${movements.length})</h2>
       ${movements.length ? `
@@ -1442,9 +1331,6 @@ function submitAdjustment() {
   render();
 }
 
-/* ==================================================================
-   CLOSE DAY
-================================================================== */
 function closeDay() {
   const today = todayISO();
   if (isDayClosed(today)) { toast('قبلاً بسته شده.', 'error'); return; }
@@ -1455,8 +1341,7 @@ function closeDay() {
     `معاملات: ${s.count}\nلیتر: ${fmt(s.totalLiters)}\n`+
     `فروش: ${fmt(s.totalSales)} AFN\nنقد: ${fmt(s.cashSales)}\nنسیه: ${fmt(s.creditSales)}\n\n`+
     `💰 ورودی نقدی: ${fmt(cs.totalIn)}\n💸 خروجی نقدی: ${fmt(cs.totalOut)}\n`+
-    `خالص: ${fmt(cs.net)} AFN\n\n`+
-    `بعد از بستن، امکان ثبت معامله جدید برای این روز وجود ندارد.`
+    `خالص: ${fmt(cs.net)} AFN`
   )) return;
   state.closedDays[today] = { closedAt: nowISO() };
   log('بستن روز', `${today} | فروش: ${s.totalSales} | صندوق خالص: ${cs.net}`);
@@ -1464,15 +1349,12 @@ function closeDay() {
 }
 function reopenDay(date) {
   if (!isDayClosed(date)) return;
-  if (!confirm(`باز کردن روز ${formatDate(date)}؟ (در لاگ ثبت می‌شود)`)) return;
+  if (!confirm(`باز کردن روز ${formatDate(date)}؟`)) return;
   delete state.closedDays[date];
   log('باز کردن روز', `${date}`);
   save(); toast('🔓 باز شد.', 'success'); render();
 }
 
-/* ==================================================================
-   DAILY REPORT
-================================================================== */
 let dailyReportDate = todayISO();
 function renderDailyReport() {
   const date = dailyReportDate;
@@ -1485,7 +1367,6 @@ function renderDailyReport() {
       <td class="num">${fmt(v.liters)} لیتر</td>
       <td class="num">${fmt(v.total)} AFN</td></tr>`;
   }).join('');
-
   return `
     <div class="card">
       <div class="row-between">
@@ -1503,7 +1384,6 @@ function renderDailyReport() {
       </div>
       <div class="muted">شمسی: <b>${formatDate(date)}</b></div>
     </div>
-
     <div class="card">
       <h2>💰 جریان نقدی این روز</h2>
       <div class="dash-grid">
@@ -1525,7 +1405,6 @@ function renderDailyReport() {
         <tr><td>قرض نقدی داده‌شده</td><td class="num neg">-${fmt(cs.loansOut)}</td></tr>
       </tbody></table></div>
     </div>
-
     <div class="card">
       <h2>📊 خلاصه فروش</h2>
       <div class="dash-grid">
@@ -1541,7 +1420,6 @@ function renderDailyReport() {
           <span class="value">${fmt(s.creditSales)}</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📦 فروش هر محصول</h2>
       ${prodRows ? `<div class="table-wrap"><table><thead><tr>
@@ -1549,12 +1427,10 @@ function renderDailyReport() {
       </tr></thead><tbody>${prodRows}</tbody></table></div>`
       : '<div class="empty-state">فروشی نداشت.</div>'}
     </div>
-
     <div class="card">
       <h2>🧾 معاملات</h2>
       ${renderSalesTable(s.salesList, !closed)}
     </div>
-
     <div class="card">
       <h2>💵 دریافت از بدهکاران</h2>
       ${s.debtPaymentsList.length ? `<div class="table-wrap"><table><thead><tr>
@@ -1567,7 +1443,6 @@ function renderDailyReport() {
         }).join('')}
       </tbody></table></div>` : '<div class="empty-state">ندارد.</div>'}
     </div>
-
     <div class="card">
       <h2>🤝 قرض نقدی</h2>
       ${s.loansGivenList.length ? `<div class="table-wrap"><table><thead><tr>
@@ -1590,9 +1465,6 @@ function renderDailyReport() {
     </div>`;
 }
 
-/* ==================================================================
-   GENERAL REPORT
-================================================================== */
 let genFilters = { from:'', to:'', customerId:'', productId:'', paymentType:'' };
 function renderGeneralReport() {
   const f = genFilters;
@@ -1602,20 +1474,17 @@ function renderGeneralReport() {
   if (f.customerId) sales = sales.filter(s => s.customerId === Number(f.customerId));
   if (f.productId) sales = sales.filter(s => s.productId === Number(f.productId));
   if (f.paymentType) sales = sales.filter(s => s.paymentType === f.paymentType);
-
   const total = sales.reduce((a,s)=>a+s.total,0);
   const cash = sales.filter(s=>s.paymentType==='cash').reduce((a,s)=>a+s.total,0);
   const credit = sales.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
   const liters = sales.reduce((a,s)=>a+s.liters,0);
   const cs = cashSummary(f.from||null, f.to||null);
-
   const byProduct = {};
   for (const s of sales) {
     if (!byProduct[s.productId]) byProduct[s.productId] = { liters:0, total:0 };
     byProduct[s.productId].liters += s.liters;
     byProduct[s.productId].total += s.total;
   }
-
   const custRows = state.customers.filter(c => !c.isWalkIn).map(c => {
     const cs2 = sales.filter(s => s.customerId === c.id);
     const cc = cs2.filter(s=>s.paymentType==='credit').reduce((a,s)=>a+s.total,0);
@@ -1626,11 +1495,9 @@ function renderGeneralReport() {
     const paid = pays.reduce((a,p)=>a+p.amount,0);
     return { c, cp, cc, paid, bal: customerBalance(c.id) };
   }).filter(r => !f.customerId || r.c.id === Number(f.customerId));
-
   let loans = state.loans.filter(l => l.status !== 'voided');
   if (f.from) loans = loans.filter(l => l.date >= f.from);
   if (f.to) loans = loans.filter(l => l.date <= f.to);
-
   return `
     <div class="card">
       <h2>📊 راپور عمومی</h2>
@@ -1659,7 +1526,6 @@ function renderGeneralReport() {
           <button class="btn btn-ghost" onclick="genFilters={from:'',to:'',customerId:'',productId:'',paymentType:''};render()">🗑 پاک کردن</button></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📈 خلاصه فروش</h2>
       <div class="dash-grid">
@@ -1675,7 +1541,6 @@ function renderGeneralReport() {
           <span class="value">${fmt(sales.length)}</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>💰 جریان نقدی بازه</h2>
       <div class="dash-grid">
@@ -1689,7 +1554,6 @@ function renderGeneralReport() {
           <span class="value">${fmt(totalCashOnHand())}</span><span class="sub">AFN</span></div>
       </div>
     </div>
-
     <div class="card">
       <h2>📦 فروش هر محصول</h2>
       ${Object.keys(byProduct).length ? `<div class="table-wrap"><table><thead><tr>
@@ -1703,7 +1567,6 @@ function renderGeneralReport() {
         }).join('')}
       </tbody></table></div>` : '<div class="empty-state">داده نیست.</div>'}
     </div>
-
     <div class="card">
       <h2>👥 وضعیت مشتریان</h2>
       ${custRows.length ? `<div class="table-wrap"><table><thead><tr>
@@ -1719,7 +1582,6 @@ function renderGeneralReport() {
         </tr>`).join('')}
       </tbody></table></div>` : '<div class="empty-state">داده نیست.</div>'}
     </div>
-
     <div class="card">
       <h2>🤝 قرض نقدی</h2>
       ${loans.length ? `<div class="table-wrap"><table><thead><tr>
@@ -1737,9 +1599,6 @@ function renderGeneralReport() {
   `;
 }
 
-/* ==================================================================
-   LOGS
-================================================================== */
 function renderLogs() {
   const logs = [...state.logs].sort((a,b) =>
     (b.timestamp||'').localeCompare(a.timestamp||''));
@@ -1748,9 +1607,9 @@ function renderLogs() {
       <div class="row-between">
         <h2>📋 لاگ (${fmt(logs.length)})</h2>
         <div class="flex">
-          <button class="btn btn-info btn-sm" onclick="exportData()">📥 پشتیبان‌گیری</button>
+          <button class="btn btn-info btn-sm" onclick="exportData()">📥 پشتیبان</button>
           <button class="btn btn-ghost btn-sm" onclick="importData()">📤 بازیابی</button>
-          <button class="btn btn-ghost btn-sm" onclick="if(confirm('پاک کردن لاگ؟')){state.logs=[];save();render();}">🗑 لاگ</button>
+          <button class="btn btn-ghost btn-sm" onclick="if(confirm('پاک کردن لاگ؟')){state.logs=[];save();render();}">🗑</button>
         </div>
       </div>
       ${logs.length ? `<div class="table-wrap"><table><thead><tr>
@@ -1764,9 +1623,6 @@ function renderLogs() {
     </div>`;
 }
 
-/* ==================================================================
-   BACKUP / RESTORE
-================================================================== */
 function exportData() {
   const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
   const a = document.createElement('a');
@@ -1784,10 +1640,10 @@ function importData() {
     reader.onload = ev => {
       try {
         const data = JSON.parse(ev.target.result);
-        if (!data.customers || !data.sales) throw new Error('فرمت نامعتبر');
+        if (!data.customers || !data.sales) throw new Error('bad');
         if (!confirm('تمام اطلاعات فعلی جایگزین می‌شود. ادامه؟')) return;
-        state = data;
-        save(); toast('✅ بازیابی شد.', 'success'); render();
+        state = data; save();
+        toast('✅ بازیابی شد.', 'success'); render();
       } catch (err) { toast('خطا در فایل.', 'error'); }
     };
     reader.readAsText(file);
@@ -1795,9 +1651,6 @@ function importData() {
   inp.click();
 }
 
-/* ==================================================================
-   MODAL
-================================================================== */
 function showModal(title, body, footer) {
   $('#modalRoot').innerHTML = `
     <div class="modal-overlay" onclick="if(event.target===this)closeModal()">
@@ -1814,23 +1667,18 @@ function showModal(title, body, footer) {
 function closeModal() { $('#modalRoot').innerHTML = ''; }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-/* ==================================================================
-   PWA INSTALL
-================================================================== */
 let deferredPrompt = null;
 const installBtn = document.getElementById('pwaInstallBtn');
-
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault(); deferredPrompt = e;
   installBtn.style.display = 'flex';
 });
-
 window.installPWA = async function() {
   if (!deferredPrompt) {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     alert(isIOS
-      ? '📱 برای نصب روی iPhone:\n\n1. این صفحه را در Safari باز کنید\n2. دکمه Share (□↑) را بزنید\n3. Add to Home Screen را انتخاب کنید\n4. Add را بزنید'
-      : '📱 برای نصب:\n\nمنوی مرورگر → Install app / Add to Home screen');
+      ? '📱 برای نصب روی iPhone:\n\n1. این صفحه را در Safari باز کنید\n2. دکمه Share (□↑) را بزنید\n3. Add to Home Screen\n4. Add'
+      : '📱 منوی مرورگر → Install app / Add to Home screen');
     return;
   }
   deferredPrompt.prompt();
@@ -1839,24 +1687,14 @@ window.installPWA = async function() {
   deferredPrompt = null;
   installBtn.style.display = 'none';
 };
-
-window.addEventListener('appinstalled', () => {
-  installBtn.style.display = 'none';
-});
-
-// Show button on iOS if not already installed
+window.addEventListener('appinstalled', () => { installBtn.style.display = 'none'; });
 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 const isStandalone = window.matchMedia('(display-mode: standalone)').matches
                   || window.navigator.standalone === true;
-if (isIOS && !isStandalone) {
-  installBtn.style.display = 'flex';
-}
+if (isIOS && !isStandalone) installBtn.style.display = 'flex';
 
-/* ==================================================================
-   BOOT
-================================================================== */
 render();
-console.log('✅ App loaded — data stored offline in LocalStorage');
+console.log('✅ App loaded');
 </script>
 </body>
 </html>
